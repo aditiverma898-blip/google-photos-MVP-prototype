@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp } from 'lucide-react';
+import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle } from 'lucide-react';
 import './index.css';
 
 const SCENARIO_DATA = {
@@ -69,6 +69,7 @@ export default function App() {
   const [isScrollingFriction, setIsScrollingFriction] = useState(false);
   const [isolatedChipIndex, setIsolatedChipIndex] = useState(null);
   const [customInput, setCustomInput] = useState('');
+  const [showNoResultPopup, setShowNoResultPopup] = useState(false);
   
   const isIsolated = isolatedChipIndex !== null;
   const activeScenario = SCENARIO_DATA[scenarioId];
@@ -112,6 +113,7 @@ export default function App() {
   };
 
   const handleSearchClick = (id, query) => {
+    setShowNoResultPopup(false);
     setScenarioId(id);
     setSearchQuery(query);
     setScreen('2');
@@ -125,6 +127,7 @@ export default function App() {
     setIsScrollingFriction(false);
     setIsolatedChipIndex(null);
     setCustomInput('');
+    setShowNoResultPopup(false);
   };
 
   const handleCustomSubmit = () => {
@@ -217,11 +220,19 @@ export default function App() {
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && searchQuery.trim() !== '') {
                     const q = searchQuery.toLowerCase();
-                    let matchedId = 1; // Default
-                    if (q.includes('whiteboard') || q.includes('offsite')) matchedId = 2;
-                    else if (q.includes('airport') || q.includes('parked') || q.includes('parking')) matchedId = 3;
-                    else if (q.includes('selfie') || q.includes('concert')) matchedId = 4;
-                    handleSearchClick(matchedId, searchQuery);
+                    let matchedId = null;
+                    if (q.includes('inventory') || q.includes('paper') || q.includes('flat') || q.includes('move')) matchedId = 1;
+                    else if (q.includes('whiteboard') || q.includes('offsite') || q.includes('resort')) matchedId = 2;
+                    else if (q.includes('airport') || q.includes('parked') || q.includes('parking') || q.includes('level')) matchedId = 3;
+                    else if (q.includes('selfie') || q.includes('concert') || q.includes('merch') || q.includes('baad')) matchedId = 4;
+                    
+                    if (matchedId !== null) {
+                      setShowNoResultPopup(false);
+                      handleSearchClick(matchedId, searchQuery);
+                    } else {
+                      setShowNoResultPopup(true);
+                      setTimeout(() => setShowNoResultPopup(false), 3000);
+                    }
                   }
                 }}
               />
@@ -229,7 +240,19 @@ export default function App() {
             </div>
           </header>
 
-          <div className="flex-1 overflow-y-auto pb-6">
+          <div className="flex-1 overflow-y-auto pb-6 relative">
+            {showNoResultPopup && (
+              <div className="absolute top-4 left-4 right-4 bg-white border border-gray-100 p-4 rounded-[24px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] flex flex-col items-center gap-2 animate-fade-in z-50 text-center">
+                <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-1">
+                  <AlertCircle size={24} className="text-red-500" />
+                </div>
+                <span className="text-[16px] font-bold text-[#1F1F1F]">No results found</span>
+                <span className="text-[13px] text-[#444746] font-medium leading-snug">
+                  This query isn't part of the prototype. Try one of the suggested searches below.
+                </span>
+              </div>
+            )}
+
             <div className="px-4 py-6 border-b border-gray-50">
               <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
