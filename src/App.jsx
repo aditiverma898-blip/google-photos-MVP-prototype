@@ -28,7 +28,15 @@ const FEED_IMAGES = [
   '/images/new_s3_flowcharts_2.jpg',
   '/images/new_s3_postits_2.jpg',
   '/images/new_s3_projector_2.jpg',
-  '/images/new_s3_noise_2.jpg'
+  '/images/new_s3_noise_2.jpg',
+  '/images/new_s4_blueink_1.jpg',
+  '/images/new_s4_checklist_1.jpg',
+  '/images/new_s4_noise_1.jpg',
+  '/images/new_s4_hand_1.jpg',
+  '/images/new_s4_blueink_2.jpg',
+  '/images/new_s4_checklist_2.jpg',
+  '/images/new_s4_noise_2.jpg',
+  '/images/new_s4_hand_2.jpg'
 ];
 
 const SCENARIO_DATA = {
@@ -44,11 +52,26 @@ const SCENARIO_DATA = {
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
     example: 'e.g., "blue pen"',
-    coverImage: 'https://picsum.photos/seed/s4cover/400/400',
+    coverImage: '/images/s4_cover.jpg',
     fragments: [
-      ['https://picsum.photos/seed/s4c1/400/400', 'https://picsum.photos/seed/s4c2/400/400', 'https://picsum.photos/seed/s4c3/400/400'],
-      ['https://picsum.photos/seed/s4b1/400/400', 'https://picsum.photos/seed/s4b2/400/400', 'https://picsum.photos/seed/s4b3/400/400'],
-      ['https://picsum.photos/seed/s4h1/400/400', 'https://picsum.photos/seed/s4h2/400/400']
+      ['/images/new_s4_checklist_1.jpg', '/images/new_s4_checklist_2.jpg', '/images/new_s4_checklist_3.jpg'],
+      ['/images/new_s4_blueink_1.jpg', '/images/new_s4_blueink_2.jpg', '/images/new_s4_blueink_3.jpg'],
+      ['/images/new_s4_hand_1.jpg', '/images/new_s4_hand_2.jpg'],
+      ['/images/new_s4_noise_1.jpg', '/images/new_s4_noise_2.jpg', '/images/new_s4_noise_3.jpg', '/images/new_s4_noise_4.jpg']
+    ],
+    grid: [
+      '/images/new_s4_checklist_1.jpg',
+      '/images/new_s4_noise_1.jpg',
+      '/images/new_s4_blueink_1.jpg',
+      '/images/new_s4_hand_1.jpg',
+      '/images/new_s4_checklist_2.jpg',
+      '/images/new_s4_noise_2.jpg',
+      '/images/new_s4_blueink_2.jpg',
+      '/images/new_s4_hand_2.jpg',
+      '/images/new_s4_noise_3.jpg',
+      '/images/new_s4_checklist_3.jpg',
+      '/images/new_s4_blueink_3.jpg',
+      '/images/new_s4_noise_4.jpg'
     ]
   },
   2: {
