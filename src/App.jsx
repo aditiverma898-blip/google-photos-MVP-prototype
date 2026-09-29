@@ -20,7 +20,15 @@ const FEED_IMAGES = [
   '/images/new_s1_gate_2.jpg',
   '/images/new_s2_noise_2.jpg',
   '/images/new_s1_red_3.jpg',
-  '/images/new_s2_yellow_3.jpg'
+  '/images/new_s2_yellow_3.jpg',
+  '/images/new_s3_flowcharts_1.jpg',
+  '/images/new_s3_postits_1.jpg',
+  '/images/new_s3_projector_1.jpg',
+  '/images/new_s3_noise_1.jpg',
+  '/images/new_s3_flowcharts_2.jpg',
+  '/images/new_s3_postits_2.jpg',
+  '/images/new_s3_projector_2.jpg',
+  '/images/new_s3_noise_2.jpg'
 ];
 
 const SCENARIO_DATA = {
@@ -55,12 +63,12 @@ const SCENARIO_DATA = {
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
     example: 'e.g., "Q3 Marketing Funnel"',
-    coverImage: 'https://picsum.photos/seed/s3cover/400/400',
+    coverImage: '/images/s3_cover.jpg',
     fragments: [
-      ['https://picsum.photos/seed/s3f1/400/400', 'https://picsum.photos/seed/s3f2/400/400', 'https://picsum.photos/seed/s3f3/400/400'],
-      ['https://picsum.photos/seed/s3p1/400/400', 'https://picsum.photos/seed/s3p2/400/400'],
-      ['https://picsum.photos/seed/s3s1/400/400', 'https://picsum.photos/seed/s3s2/400/400', 'https://picsum.photos/seed/s3s3/400/400'],
-      ['https://picsum.photos/seed/s3q3/400/400']
+      ['/images/new_s3_flowcharts_1.jpg', '/images/new_s3_flowcharts_2.jpg', '/images/new_s3_flowcharts_3.jpg'],
+      ['/images/new_s3_postits_1.jpg', '/images/new_s3_postits_2.jpg'],
+      ['/images/new_s3_projector_1.jpg', '/images/new_s3_projector_2.jpg', '/images/new_s3_projector_3.jpg'],
+      ['/images/new_s3_noise_1.jpg', '/images/new_s3_noise_2.jpg', '/images/new_s3_noise_3.jpg', '/images/new_s3_noise_4.jpg']
     ]
   },
   3: {
