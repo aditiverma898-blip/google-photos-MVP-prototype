@@ -92,6 +92,20 @@ const SCENARIO_DATA = {
       ['/images/new_s3_postits_1.jpg', '/images/new_s3_postits_2.jpg'],
       ['/images/new_s3_projector_1.jpg', '/images/new_s3_projector_2.jpg', '/images/new_s3_projector_3.jpg'],
       ['/images/new_s3_noise_1.jpg', '/images/new_s3_noise_2.jpg', '/images/new_s3_noise_3.jpg', '/images/new_s3_noise_4.jpg']
+    ],
+    grid: [
+      '/images/new_s3_flowcharts_1.jpg',
+      '/images/new_s3_noise_1.jpg',
+      '/images/new_s3_postits_1.jpg',
+      '/images/new_s3_projector_1.jpg',
+      '/images/new_s3_flowcharts_2.jpg',
+      '/images/new_s3_noise_2.jpg',
+      '/images/new_s3_postits_2.jpg',
+      '/images/new_s3_projector_2.jpg',
+      '/images/new_s3_noise_3.jpg',
+      '/images/new_s3_flowcharts_3.jpg',
+      '/images/new_s3_projector_3.jpg',
+      '/images/new_s3_noise_4.jpg'
     ]
   },
   3: {
