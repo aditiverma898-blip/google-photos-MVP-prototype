@@ -2,6 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle } from 'lucide-react';
 import './index.css';
 
+const FEED_IMAGES = [
+  '/images/new_s1_red_1.jpg',
+  '/images/new_s2_yellow_1.jpg',
+  '/images/new_s1_green_1.jpg',
+  '/images/new_s2_ticket_1.jpg',
+  '/images/new_s1_noise_1.jpg',
+  '/images/new_s2_elevator_1.jpg',
+  '/images/new_s1_gate_1.jpg',
+  '/images/new_s2_noise_1.jpg',
+  '/images/new_s1_red_2.jpg',
+  '/images/new_s2_yellow_2.jpg',
+  '/images/new_s1_noise_2.jpg',
+  '/images/new_s2_ticket_2.jpg',
+  '/images/new_s1_green_2.jpg',
+  '/images/new_s2_elevator_2.jpg',
+  '/images/new_s1_gate_2.jpg',
+  '/images/new_s2_noise_2.jpg',
+  '/images/new_s1_red_3.jpg',
+  '/images/new_s2_yellow_3.jpg'
+];
+
 const SCENARIO_DATA = {
   1: {
     id: 1,
@@ -14,7 +35,13 @@ const SCENARIO_DATA = {
       { title: "Building Exterior & Parking", badge: "2/4 Broad Match", color: "gray" }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
-    example: 'e.g., "blue pen"'
+    example: 'e.g., "blue pen"',
+    coverImage: 'https://picsum.photos/seed/s4cover/400/400',
+    fragments: [
+      ['https://picsum.photos/seed/s4c1/400/400', 'https://picsum.photos/seed/s4c2/400/400', 'https://picsum.photos/seed/s4c3/400/400'],
+      ['https://picsum.photos/seed/s4b1/400/400', 'https://picsum.photos/seed/s4b2/400/400', 'https://picsum.photos/seed/s4b3/400/400'],
+      ['https://picsum.photos/seed/s4h1/400/400', 'https://picsum.photos/seed/s4h2/400/400']
+    ]
   },
   2: {
     id: 2,
@@ -27,7 +54,14 @@ const SCENARIO_DATA = {
       { title: "All Whiteboards (General)", badge: "2/4 Broad Match", color: "gray" }
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
-    example: 'e.g., "Q3 Marketing Funnel"'
+    example: 'e.g., "Q3 Marketing Funnel"',
+    coverImage: 'https://picsum.photos/seed/s3cover/400/400',
+    fragments: [
+      ['https://picsum.photos/seed/s3f1/400/400', 'https://picsum.photos/seed/s3f2/400/400', 'https://picsum.photos/seed/s3f3/400/400'],
+      ['https://picsum.photos/seed/s3p1/400/400', 'https://picsum.photos/seed/s3p2/400/400'],
+      ['https://picsum.photos/seed/s3s1/400/400', 'https://picsum.photos/seed/s3s2/400/400', 'https://picsum.photos/seed/s3s3/400/400'],
+      ['https://picsum.photos/seed/s3q3/400/400']
+    ]
   },
   3: {
     id: 3,
@@ -40,7 +74,28 @@ const SCENARIO_DATA = {
       { title: "In-Car Dash & Highway Transit", badge: "Pre-Event", color: "gray" }
     ],
     chips: ["Yellow Pillar 🟡", "Printed Parking Ticket 🎫", "Near the Elevator 🛗"],
-    example: 'e.g., "level 2"'
+    example: 'e.g., "level 2"',
+    coverImage: '/images/s2_cover.jpg',
+    fragments: [
+      ['/images/new_s2_yellow_1.jpg', '/images/new_s2_yellow_2.jpg', '/images/new_s2_yellow_3.jpg'],
+      ['/images/new_s2_ticket_1.jpg', '/images/new_s2_ticket_2.jpg'],
+      ['/images/new_s2_elevator_1.jpg', '/images/new_s2_elevator_2.jpg'],
+      ['/images/new_s2_level2_1.jpg']
+    ],
+    grid: [
+      '/images/new_s2_yellow_1.jpg',
+      '/images/new_s2_ticket_1.jpg',
+      '/images/new_s2_noise_1.jpg',
+      '/images/new_s2_elevator_1.jpg',
+      '/images/new_s2_noise_2.jpg',
+      '/images/new_s2_yellow_2.jpg',
+      '/images/new_s2_ticket_2.jpg',
+      '/images/new_s2_noise_3.jpg',
+      '/images/new_s2_elevator_2.jpg',
+      '/images/new_s2_noise_4.jpg',
+      '/images/new_s2_yellow_3.jpg',
+      '/images/new_s2_noise_5.jpg'
+    ]
   },
   4: {
     id: 4,
@@ -53,7 +108,28 @@ const SCENARIO_DATA = {
       { title: "Merch Stalls & Outer Arena", badge: "2/4 Broad Match", color: "gray" }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
-    example: 'e.g., "holding merch"'
+    example: 'e.g., "holding merch"',
+    coverImage: '/images/s1_cover.jpg',
+    fragments: [
+      ['/images/new_s1_red_1.jpg', '/images/new_s1_red_2.jpg', '/images/new_s1_red_3.jpg'],
+      ['/images/new_s1_green_1.jpg', '/images/new_s1_green_2.jpg', '/images/new_s1_green_3.jpg'],
+      ['/images/new_s1_gate_1.jpg', '/images/new_s1_gate_2.jpg'],
+      ['/images/new_s1_merch_1.jpg']
+    ],
+    grid: [
+      '/images/new_s1_red_1.jpg',
+      '/images/new_s1_green_1.jpg',
+      '/images/new_s1_noise_1.jpg',
+      '/images/new_s1_gate_1.jpg',
+      '/images/new_s1_noise_2.jpg',
+      '/images/new_s1_red_2.jpg',
+      '/images/new_s1_green_2.jpg',
+      '/images/new_s1_gate_2.jpg',
+      '/images/new_s1_noise_3.jpg',
+      '/images/new_s1_green_3.jpg',
+      '/images/new_s1_noise_4.jpg',
+      '/images/new_s1_red_3.jpg'
+    ]
   }
 };
 
@@ -74,16 +150,9 @@ export default function App() {
   const isIsolated = isolatedChipIndex !== null;
   const activeScenario = SCENARIO_DATA[scenarioId];
   
-  let fragmentsCount = 2;
-  if (activeScenario.id === 4) {
-    fragmentsCount = 3;
-  } else if (activeScenario.id === 3) {
-    if (isolatedChipIndex === 1) { // Printed Parking Ticket
-      fragmentsCount = 1;
-    } else {
-      fragmentsCount = 4;
-    }
-  }
+  const fragmentsCount = isIsolated && activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] 
+    ? activeScenario.fragments[isolatedChipIndex].length 
+    : 0;
 
   useEffect(() => {
     let interval, timeout;
@@ -114,6 +183,7 @@ export default function App() {
 
   const handleSearchClick = (id, query) => {
     setShowNoResultPopup(false);
+    setCustomInput('');
     setScenarioId(id);
     setSearchQuery(query);
     setScreen('2');
@@ -132,8 +202,26 @@ export default function App() {
 
   const handleCustomSubmit = () => {
     if (customInput.trim() !== '') {
-      setIsolatedChipIndex(0); // Fallback to 0 if custom input
-      setIsScrollingFriction(false);
+      const lowerInput = customInput.toLowerCase();
+      let matched = false;
+      
+      if (scenarioId === 4 && lowerInput.includes('merch')) {
+        setIsolatedChipIndex(3);
+        matched = true;
+      } else if (scenarioId === 3 && lowerInput.includes('level')) {
+        setIsolatedChipIndex(3);
+        matched = true;
+      } else if (scenarioId === 2 && (lowerInput.includes('q3') || lowerInput.includes('funnel'))) {
+        setIsolatedChipIndex(3);
+        matched = true;
+      }
+      
+      if (matched) {
+        setIsScrollingFriction(false);
+      } else {
+        setShowNoResultPopup(true);
+        setTimeout(() => setShowNoResultPopup(false), 3000);
+      }
     }
   };
 
@@ -181,8 +269,10 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-3 gap-1 px-1 mt-2">
-              {Array.from({ length: 18 }).map((_, i) => (
-                <div key={i} className={`aspect-square ${i % 2 === 0 ? 'bg-[#e0e0e0]' : 'bg-[#d6d6d6]'}`}></div>
+              {FEED_IMAGES.map((src, i) => (
+                <div key={i} className="aspect-square bg-[#e0e0e0] overflow-hidden">
+                   <img src={src} className="w-full h-full object-cover" alt="feed item" />
+                </div>
               ))}
             </div>
           </div>
@@ -210,10 +300,10 @@ export default function App() {
         <div className="flex-1 flex flex-col h-full bg-white animate-fade-in relative">
           <header className="p-4 z-10 bg-white shadow-sm border-b border-gray-100 slide-down">
             <div className="flex items-center gap-3 bg-[#F9E6DF] rounded-full px-4 py-3 shadow-sm cursor-text hover:bg-[#F9E6DF]/90 transition-colors">
-              <ArrowLeft size={20} className="text-[#3e2723] cursor-pointer" onClick={() => setScreen('1')} />
+              <ArrowLeft size={20} className="text-[#3e2723] cursor-pointer" onClick={resetAll} />
               <input 
                 type="text" 
-                placeholder="e.g. where we parked" 
+                placeholder="e.g. where we parked..." 
                 className="flex-1 bg-transparent border-none outline-none text-[#3e2723] placeholder:text-[#3e2723]/70 text-[15px]" 
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -287,7 +377,7 @@ export default function App() {
         <div className="flex-1 flex flex-col h-full bg-white animate-fade-in relative">
           <header className="p-4 z-10 bg-white shadow-sm border-b border-gray-100">
             <div className="flex items-center gap-3 bg-[#f1f3f4] rounded-full px-4 py-3 shadow-inner">
-              <ArrowLeft size={20} className="text-gray-600 cursor-pointer" onClick={() => { setScreen('1B'); setSearchQuery(''); }} />
+              <ArrowLeft size={20} className="text-gray-600 cursor-pointer" onClick={() => { setScreen('1B'); setSearchQuery(''); setCustomInput(''); setShowNoResultPopup(false); }} />
               <input type="text" className="flex-1 bg-transparent border-none outline-none text-gray-800 text-[14.5px] font-medium truncate" value={searchQuery} readOnly />
               <Sparkles size={20} className="text-blue-500" />
             </div>
@@ -319,12 +409,12 @@ export default function App() {
       {screen === '3' && (
         <div className="flex-1 flex flex-col h-full bg-white animate-fade-in relative overflow-hidden">
           
-          <header className="flex items-center justify-between p-4 z-10 bg-white relative">
-            <div className="flex items-center gap-4 truncate">
-              <ArrowLeft size={24} className="text-[#1F1F1F] cursor-pointer flex-shrink-0" onClick={() => { setScreen('1B'); setOpenDropdownId(null); setIsModalOpen(false); setIsolatedChipIndex(null); }} />
-              <span className="text-[18px] font-normal text-[#1F1F1F] truncate">{searchQuery}</span>
+          <header className="p-4 z-10 bg-white/90 backdrop-blur-md sticky top-0 border-b border-gray-100">
+            <div className="flex items-center gap-3 bg-[#f1f3f4] rounded-full px-4 py-2.5 shadow-inner cursor-text" onClick={() => setScreen('1B')}>
+              <ArrowLeft size={20} className="text-gray-600 cursor-pointer flex-shrink-0" onClick={(e) => { e.stopPropagation(); setScreen('1B'); setOpenDropdownId(null); setIsModalOpen(false); setIsolatedChipIndex(null); setCustomInput(''); setShowNoResultPopup(false); }} />
+              <div className="flex-1 text-[#1F1F1F] text-[14.5px] font-medium truncate">{searchQuery}</div>
+              <div className="w-[28px] h-[28px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-[12px] flex-shrink-0">A</div>
             </div>
-            <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm flex-shrink-0">A</div>
           </header>
           
           <div className="px-5 pb-4 pt-2 border-b border-gray-50">
@@ -351,9 +441,13 @@ export default function App() {
                   <div className="absolute top-3 left-3 right-1 bottom-[-8px] bg-[#f8f9fa] border border-gray-200 rounded-[24px] shadow-md transform scale-95 rotate-2 opacity-70 transition-transform duration-300 group-hover:rotate-4 group-hover:translate-x-1 group-hover:translate-y-1"></div>
                   {/* Card 1 (Top) */}
                   <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#ffffff] border border-gray-100 rounded-[24px] shadow-[0_12px_28px_rgba(0,0,0,0.08)] flex flex-col overflow-hidden transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.12)] z-10">
-                     <div className="flex-1 bg-gray-50 flex items-center justify-center relative">
-                        <ImageIcon size={56} className="text-gray-300" />
-                        {idx === 0 && <div className="absolute inset-0 bg-green-500/5 mix-blend-multiply"></div>}
+                     <div className="flex-1 bg-gray-50 flex items-center justify-center relative overflow-hidden">
+                        {idx === 0 && activeScenario.coverImage ? (
+                          <img src={activeScenario.coverImage} alt="Cover" className="w-full h-full object-cover" />
+                        ) : (
+                          <ImageIcon size={56} className="text-gray-300" />
+                        )}
+                        {idx === 0 && <div className="absolute inset-0 bg-green-500/5 mix-blend-multiply pointer-events-none"></div>}
                      </div>
                   </div>
                 </div>
@@ -400,6 +494,18 @@ export default function App() {
                 </button>
               )}
 
+              {showNoResultPopup && isModalOpen && (
+                <div className="absolute top-24 left-4 right-4 bg-white border border-gray-100 p-4 rounded-[24px] shadow-[0_12px_40px_rgba(0,0,0,0.12)] flex flex-col items-center gap-2 animate-fade-in z-[100] text-center">
+                  <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-1">
+                    <AlertCircle size={24} className="text-red-500" />
+                  </div>
+                  <span className="text-[16px] font-bold text-[#1F1F1F]">No results found</span>
+                  <span className="text-[13px] text-[#444746] font-medium leading-snug">
+                    This query isn't part of the prototype. Try a different memory fragment.
+                  </span>
+                </div>
+              )}
+
               <div 
                 className="flex-1 overflow-y-auto p-5 scrollbar-hide relative pb-60"
                 onScroll={handleModalScroll}
@@ -407,9 +513,9 @@ export default function App() {
                 {isIsolated && <div className="fixed inset-0 bg-black/65 z-30 transition-opacity"></div>}
                 
                 <div className={`grid grid-cols-3 gap-1 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isIsolated ? 'scale-110 relative z-20 mt-16 opacity-30' : ''}`}>
-                  {Array.from({ length: 24 }).map((_, i) => (
-                    <div key={i} className="aspect-square bg-[#e0e0e0] flex items-center justify-center">
-                      <ImageIcon size={24} className="text-[#bdbdbd]" />
+                  {Array.from({ length: 12 }).map((_, i) => (
+                    <div key={i} className="aspect-square bg-[#e0e0e0] flex items-center justify-center overflow-hidden">
+                      <img src={activeScenario.grid ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`} className="w-full h-full object-cover opacity-80" alt="grid item" />
                     </div>
                   ))}
                 </div>
@@ -417,10 +523,14 @@ export default function App() {
                 {isIsolated && (
                   <div className="absolute inset-0 z-40 flex flex-col items-center justify-center p-4 animate-fade-in pointer-events-none mt-10">
                     <div className="flex flex-wrap justify-center gap-3 pointer-events-auto max-w-[340px]">
-                      {Array.from({ length: fragmentsCount }).map((_, i) => (
+                       {Array.from({ length: fragmentsCount }).map((_, i) => (
                         <div key={i} className="w-[140px] h-[190px] bg-white rounded-[16px] shadow-2xl border-4 border-white overflow-hidden relative transform hover:scale-105 transition-transform cursor-pointer">
                            <div className="absolute inset-0 bg-[#f1f3f4] flex flex-col items-center justify-center gap-2">
-                             <ImageIcon size={32} className="text-gray-400" />
+                             {activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] && activeScenario.fragments[isolatedChipIndex][i] ? (
+                               <img src={activeScenario.fragments[isolatedChipIndex][i]} alt={`Fragment ${i}`} className="w-full h-full object-cover" />
+                             ) : (
+                               <ImageIcon size={32} className="text-gray-400" />
+                             )}
                            </div>
                            <div className="absolute bottom-2 left-2 right-2 bg-[#0f9d58] text-white text-[11px] font-bold px-2 py-1.5 rounded-lg text-center shadow-md flex items-center justify-center gap-1">
                              <Sparkles size={12} /> Target Match
