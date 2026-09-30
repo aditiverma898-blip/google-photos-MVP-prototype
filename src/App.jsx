@@ -196,7 +196,7 @@ export default function App() {
   useEffect(() => {
     let tooltipTimer;
     if (screen === '1') {
-      tooltipTimer = setTimeout(() => setShowSearchTooltip(true), 1200);
+      tooltipTimer = setTimeout(() => setShowSearchTooltip(true), 600);
     } else {
       setShowSearchTooltip(false);
     }
