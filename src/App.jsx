@@ -423,8 +423,10 @@ export default function App() {
             <div className="px-4 py-6 border-b border-gray-50">
               <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
                 {FEED_IMAGES.slice(0, 6).map((src, i) => (
-                  <div key={i} className="flex-shrink-0 flex flex-col items-center">
-                    <img src={src} className="w-[56px] h-[56px] rounded-full object-cover border border-gray-200 p-0.5" alt="recent item" />
+                  <div key={i} className="flex-shrink-0 w-[56px] h-[56px] rounded-full border border-gray-200 p-0.5">
+                    <div className="w-full h-full rounded-full overflow-hidden">
+                      <img src={src} className="w-full h-full object-cover scale-[1.7]" alt="recent item" />
+                    </div>
                   </div>
                 ))}
               </div>
