@@ -510,21 +510,29 @@ export default function App() {
                 
                 {/* 3x2 PHOTO GRID COLLAGE */}
                 <div 
-                  className="grid grid-cols-3 gap-1 w-full rounded-[24px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] cursor-pointer group border border-gray-100"
+                  className="grid grid-cols-3 gap-1 w-full rounded-[24px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] cursor-pointer group border border-gray-100 bg-[#f1f3f4]"
                   onClick={() => { if (idx === 0) setIsModalOpen(true); }}
                 >
                   {Array.from({ length: 5 }).map((_, i) => {
-                    const imgSrc = (stack.gridImages && stack.gridImages[i]) ? stack.gridImages[i] : (activeScenario.grid ? activeScenario.grid[(idx * 5 + i) % 12] : `https://picsum.photos/seed/${idx}${i}/200/200`);
+                    const imgSrc = stack.gridImages && stack.gridImages[i];
                     return (
-                      <div key={i} className="aspect-square bg-gray-100 overflow-hidden relative">
-                        <img src={imgSrc} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt={`grid item ${i}`} />
+                      <div key={i} className="aspect-square bg-[#e8eaed] overflow-hidden relative flex items-center justify-center">
+                        {imgSrc ? (
+                          <img src={imgSrc} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt={`grid item ${i}`} />
+                        ) : (
+                          <ImageIcon size={24} className="text-gray-300 opacity-50" />
+                        )}
                       </div>
                     );
                   })}
                   {/* The blurred 6th box */}
-                  <div className="aspect-square bg-gray-200 relative overflow-hidden">
-                    <img src={stack.gridImages ? stack.gridImages[0] : (activeScenario.grid ? activeScenario.grid[(idx * 5 + 5) % 12] : `https://picsum.photos/seed/blur${idx}/200/200`)} className="w-full h-full object-cover" alt="more items" />
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[3px] flex items-center justify-center text-white font-bold text-[20px] transition-colors duration-300 group-hover:bg-black/50">
+                  <div className="aspect-square bg-[#e8eaed] relative overflow-hidden flex items-center justify-center">
+                    {stack.gridImages && stack.gridImages[0] ? (
+                      <img src={stack.gridImages[0]} className="w-full h-full object-cover" alt="more items" />
+                    ) : (
+                      <div className="w-full h-full bg-[#dcdcdc]"></div>
+                    )}
+                    <div className="absolute inset-0 bg-black/30 backdrop-blur-[4px] flex items-center justify-center text-white font-bold text-[20px] transition-colors duration-300 group-hover:bg-black/40">
                       +{idx === 0 ? 34 : idx === 1 ? 12 : 7}
                     </div>
                   </div>
