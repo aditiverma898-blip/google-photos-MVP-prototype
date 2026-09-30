@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X } from 'lucide-react';
+import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown } from 'lucide-react';
 import './index.css';
 
 const FEED_IMAGES = [
@@ -629,6 +629,26 @@ export default function App() {
                     </div>
                     <div className="mt-8 bg-white text-[#1F1F1F] font-semibold px-6 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.2)] text-[14px] text-center border border-gray-100 flex items-center gap-2 pointer-events-auto">
                       <Check size={18} className="text-[#0f9d58]" /> Isolated {fragmentsCount} {fragmentsCount === 1 ? 'fragment' : 'fragments'}
+                    </div>
+
+                    {/* Feedback Widget */}
+                    <div className="mt-4 bg-white/95 backdrop-blur-md rounded-[16px] p-4 shadow-xl pointer-events-auto w-[280px] border border-gray-200">
+                      <div className="text-center text-[13px] font-semibold text-gray-800 mb-3">
+                        Got the exact photo you needed?
+                      </div>
+                      <div className="flex justify-center gap-4 mb-3">
+                        <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-100 text-gray-500 hover:text-green-600 transition-colors">
+                          <ThumbsUp size={18} />
+                        </button>
+                        <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-100 text-gray-500 hover:text-red-600 transition-colors">
+                          <ThumbsDown size={18} />
+                        </button>
+                      </div>
+                      <input 
+                        type="text" 
+                        placeholder="Add feedback..." 
+                        className="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-[12px] focus:outline-none focus:border-blue-400 placeholder-gray-400"
+                      />
                     </div>
                   </div>
                 )}
