@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown } from 'lucide-react';
 import './index.css';
 
@@ -195,6 +195,18 @@ export default function App() {
   const [showSearchTooltip, setShowSearchTooltip] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState(null);
   const [activeTab, setActiveTab] = useState('Photos');
+  const [showScrollDate, setShowScrollDate] = useState(false);
+  const scrollTimeoutRef = useRef(null);
+
+  const handleFeedScroll = (e) => {
+    if (e.target.scrollTop > 40) {
+      setShowScrollDate(true);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+      scrollTimeoutRef.current = setTimeout(() => setShowScrollDate(false), 1200);
+    } else {
+      setShowScrollDate(false);
+    }
+  };
 
   useEffect(() => {
     let tooltipTimer;
@@ -309,6 +321,11 @@ export default function App() {
           {activeTab === 'Create' && <img src="/images/tab_create.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Create" />}
           
           <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
+            
+            <div className={`absolute top-[70px] left-1/2 -translate-x-1/2 z-40 bg-[#F9E6DF] text-[#3e2723] px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm transition-opacity duration-300 pointer-events-none ${showScrollDate ? 'opacity-100' : 'opacity-0'}`}>
+              Fri, 25 Sept
+            </div>
+
             <header className="flex justify-between items-center p-4 z-10 bg-[#F8F9FA]">
             <div className="flex items-center gap-2 bg-[#F9E6DF] px-3 py-1.5 rounded-full text-[13px] font-medium text-[#3e2723]">
               <Cloud size={16} /> Backup complete
@@ -321,7 +338,7 @@ export default function App() {
             </div>
           </header>
 
-          <div className="flex-1 overflow-y-auto scrollbar-hide pb-28">
+          <div className="flex-1 overflow-y-auto scrollbar-hide pb-28" onScroll={handleFeedScroll}>
             <div className="flex gap-3 px-4 py-3 overflow-x-auto scrollbar-hide">
               <div className="flex-shrink-0 w-[140px] h-[210px] rounded-[24px] text-white p-3 flex flex-col justify-end relative overflow-hidden shadow-sm">
                 <img src="/images/dash1.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Selfies" />
