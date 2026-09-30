@@ -422,9 +422,9 @@ export default function App() {
 
             <div className="px-4 py-6 border-b border-gray-50">
               <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
-                {[1, 2, 3, 4, 5, 6].map((i) => (
+                {FEED_IMAGES.slice(0, 6).map((src, i) => (
                   <div key={i} className="flex-shrink-0 flex flex-col items-center">
-                    <img src={`https://i.pravatar.cc/100?img=${i + 15}`} className="w-[56px] h-[56px] rounded-full object-cover border border-gray-200 p-0.5" alt="contact" />
+                    <img src={src} className="w-[56px] h-[56px] rounded-full object-cover border border-gray-200 p-0.5" alt="recent item" />
                   </div>
                 ))}
               </div>
@@ -433,15 +433,18 @@ export default function App() {
             <div className="px-4 pt-6">
               <h3 className="text-[13px] font-bold text-gray-500 mb-4 tracking-wide uppercase">Try asking:</h3>
               <div className="flex flex-col gap-3">
-                {Object.values(SCENARIO_DATA).map((scenario) => (
-                  <button 
-                    key={scenario.id}
-                    onClick={() => handleSearchClick(scenario.id, scenario.query)}
-                    className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all text-left group"
-                  >
-                    <div className="text-[14.5px] font-semibold text-gray-800 leading-snug">{scenario.query}</div>
-                  </button>
-                ))}
+                {[3, 1, 2, 4].map((id) => {
+                  const scenario = SCENARIO_DATA[id];
+                  return (
+                    <button 
+                      key={scenario.id}
+                      onClick={() => handleSearchClick(scenario.id, scenario.query)}
+                      className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all text-left group"
+                    >
+                      <div className="text-[14.5px] font-semibold text-gray-800 leading-snug">{scenario.query}</div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
