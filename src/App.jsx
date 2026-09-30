@@ -324,13 +324,15 @@ export default function App() {
           <div className="flex-1 overflow-y-auto scrollbar-hide pb-28">
             <div className="flex gap-3 px-4 py-3 overflow-x-auto scrollbar-hide">
               <div className="flex-shrink-0 w-[150px] h-[220px] rounded-[24px] bg-[#1a237e] text-white p-4 flex flex-col justify-end relative overflow-hidden shadow-sm">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-0"></div>
-                <span className="relative z-10 text-[32px] font-bold tracking-tight leading-none mb-1">AUG</span>
-                <span className="relative z-10 text-[14px] font-medium">Best of August</span>
+                <img src="/images/stage2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="AUG" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
+                <span className="relative z-20 text-[32px] font-bold tracking-tight leading-none mb-1 drop-shadow-md">AUG</span>
+                <span className="relative z-20 text-[14px] font-medium drop-shadow-md">Best of August</span>
               </div>
               <div className="flex-shrink-0 w-[150px] h-[220px] rounded-[24px] bg-[#004d40] text-white p-4 flex flex-col justify-center items-center relative overflow-hidden shadow-sm">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-0"></div>
-                <span className="relative z-10 text-[22px] font-bold text-center leading-snug">What's on the menu?</span>
+                <img src="/images/int2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Menu" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
+                <span className="relative z-20 text-[22px] font-bold text-center leading-snug drop-shadow-md">What's on the menu?</span>
               </div>
             </div>
 
@@ -775,5 +777,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
