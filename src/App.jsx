@@ -191,7 +191,17 @@ export default function App() {
   const [isolatedChipIndex, setIsolatedChipIndex] = useState(null);
   const [customInput, setCustomInput] = useState('');
   const [showNoResultPopup, setShowNoResultPopup] = useState(false);
-  const [showSearchTooltip, setShowSearchTooltip] = useState(true);
+  const [showSearchTooltip, setShowSearchTooltip] = useState(false);
+
+  useEffect(() => {
+    let tooltipTimer;
+    if (screen === '1') {
+      tooltipTimer = setTimeout(() => setShowSearchTooltip(true), 1200);
+    } else {
+      setShowSearchTooltip(false);
+    }
+    return () => clearTimeout(tooltipTimer);
+  }, [screen]);
   
   const isIsolated = isolatedChipIndex !== null;
   const activeScenario = SCENARIO_DATA[scenarioId];
