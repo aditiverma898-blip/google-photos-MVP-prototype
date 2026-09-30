@@ -299,62 +299,119 @@ export default function App() {
       {screen === '1' && (
         <div className="flex-1 flex flex-col h-full bg-[#F8F9FA] animate-fade-in relative">
           {activeTab === 'Collections' && (
-            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-6 px-4 bg-[#F8F9FA] animate-fade-in">
+            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-4 px-4 bg-white animate-fade-in">
+              {/* Header */}
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-[22px] font-semibold text-[#1F1F1F]">Collections</h2>
-                <div className="flex gap-4 text-[#5F6368] items-center">
-                  <Search size={22} />
-                  <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm">A</div>
+                <div className="flex items-center gap-2 bg-[#FAEDE6] px-4 py-2 rounded-full">
+                  <Cloud size={18} className="text-[#3e2723]" />
+                  <span className="text-[13px] font-semibold text-[#3e2723]">Backup complete</span>
+                </div>
+                <div className="flex gap-4 text-[#3e2723] items-center">
+                  <FolderOpen size={24} />
+                  <Plus size={24} />
+                  <Bell size={24} />
+                  <div className="w-[32px] h-[32px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-[15px]">A</div>
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="bg-[#E8F0FE] text-[#1967D2] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
-                  <Star size={24} className="mb-2" />
-                  <span className="font-semibold text-[15px]">Favorites</span>
+              {/* 4 Pills */}
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
+                  <Star size={20} className="text-[#3e2723]" />
+                  <span className="font-semibold text-[14px] text-[#3e2723]">Favourites</span>
                 </div>
-                <div className="bg-[#FCE8E6] text-[#C5221F] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
-                  <Archive size={24} className="mb-2" />
-                  <span className="font-semibold text-[15px]">Archive</span>
+                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
+                  <Trash2 size={20} className="text-[#3e2723]" />
+                  <span className="font-semibold text-[14px] text-[#3e2723]">Bin</span>
                 </div>
-                <div className="bg-[#E6F4EA] text-[#137333] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
-                  <Trash2 size={24} className="mb-2" />
-                  <span className="font-semibold text-[15px]">Trash</span>
+                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
+                  <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
+                    <img src="/images/s1_cover.jpg" className="w-full h-full object-cover" alt="Event" />
+                  </div>
+                  <span className="font-semibold text-[14px] text-[#3e2723] truncate leading-tight">Event information</span>
                 </div>
-                <div className="bg-[#FEF7E0] text-[#E37400] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
-                  <Folder size={24} className="mb-2" />
-                  <span className="font-semibold text-[15px]">Locked Folder</span>
+                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
+                  <div className="w-7 h-7 rounded-full overflow-hidden shrink-0">
+                    <img src="/images/s4_cover.jpg" className="w-full h-full object-cover" alt="Identity" />
+                  </div>
+                  <span className="font-semibold text-[14px] text-[#3e2723] truncate leading-tight">Identity</span>
                 </div>
               </div>
               
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-[16px] font-semibold text-[#1F1F1F]">Albums</h3>
-                  <span className="text-[13px] text-[#1A73E8] font-semibold cursor-pointer">View all</span>
+              {/* 6 Large Cards */}
+              <div className="grid grid-cols-2 gap-x-4 gap-y-6 pb-6">
+                
+                {/* Albums */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-2.5 aspect-square flex items-center justify-center">
+                    <div className="grid grid-cols-2 gap-1 w-full h-full rounded-[20px] overflow-hidden">
+                      <img src="/images/new_s1_red_1.jpg" className="w-full h-full object-cover" alt="Album" />
+                      <img src="/images/new_s1_red_2.jpg" className="w-full h-full object-cover" alt="Album" />
+                      <img src="/images/new_s2_yellow_1.jpg" className="w-full h-full object-cover" alt="Album" />
+                      <img src="/images/new_s3_flowcharts_1.jpg" className="w-full h-full object-cover" alt="Album" />
+                    </div>
+                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">Albums</span>
                 </div>
-                <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
-                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
-                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
-                      <img src="/images/new_s2_yellow_1.jpg" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+
+                {/* On this device */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-2.5 aspect-square flex items-center justify-center">
+                    <div className="grid grid-cols-2 gap-1 w-full h-full rounded-[20px] overflow-hidden">
+                      <img src="/images/dash1.png" className="w-full h-full object-cover" alt="Device" />
+                      <img src="/images/dash2.png" className="w-full h-full object-cover" alt="Device" />
+                      <img src="/images/term1.png" className="w-full h-full object-cover" alt="Device" />
+                      <img src="/images/term2.png" className="w-full h-full object-cover" alt="Device" />
                     </div>
-                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Basement Parking</p>
-                    <p className="text-[12px] text-gray-500">12 photos</p>
                   </div>
-                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
-                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
-                      <img src="/images/conf1.png" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
-                    </div>
-                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Conference Rooms</p>
-                    <p className="text-[12px] text-gray-500">22 photos</p>
-                  </div>
-                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
-                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
-                      <img src="/images/new_s3_flowcharts_1.jpg" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
-                    </div>
-                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Flowcharts</p>
-                    <p className="text-[12px] text-gray-500">8 photos</p>
-                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">On this device</span>
                 </div>
+
+                {/* People */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-2.5 aspect-square flex items-center justify-center">
+                    <div className="grid grid-cols-2 gap-1.5 w-full h-full">
+                      <div className="rounded-full overflow-hidden w-full h-full"><img src="/images/stage1.png" className="w-full h-full object-cover" alt="Person" /></div>
+                      <div className="rounded-full overflow-hidden w-full h-full"><img src="/images/stage2.png" className="w-full h-full object-cover" alt="Person" /></div>
+                      <div className="rounded-full overflow-hidden w-full h-full"><img src="/images/stage3.png" className="w-full h-full object-cover" alt="Person" /></div>
+                      <div className="rounded-full overflow-hidden w-full h-full"><img src="/images/stage4.png" className="w-full h-full object-cover" alt="Person" /></div>
+                    </div>
+                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">People</span>
+                </div>
+
+                {/* Wardrobe */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-0 aspect-square flex items-center justify-center overflow-hidden">
+                     <img src="/images/merch1.png" className="w-full h-full object-cover" alt="Wardrobe" />
+                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">Wardrobe</span>
+                </div>
+
+                {/* Documents */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-2.5 aspect-square flex items-center justify-center">
+                    <div className="grid grid-cols-2 gap-1 w-full h-full rounded-[20px] overflow-hidden bg-[#e0e0e0]">
+                      <img src="/images/new_s4_checklist_1.jpg" className="w-full h-full object-cover" alt="Doc" />
+                      <img src="/images/new_s4_checklist_2.jpg" className="w-full h-full object-cover" alt="Doc" />
+                      <img src="/images/new_s4_blueink_1.jpg" className="w-full h-full object-cover" alt="Doc" />
+                      <img src="/images/new_s4_blueink_2.jpg" className="w-full h-full object-cover" alt="Doc" />
+                    </div>
+                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">Documents</span>
+                </div>
+
+                {/* Places */}
+                <div className="flex flex-col gap-2 cursor-pointer">
+                  <div className="bg-[#FAEDE6] rounded-[28px] p-0 aspect-square flex items-center justify-center overflow-hidden relative">
+                     <img src="https://maps.googleapis.com/maps/api/staticmap?center=London&zoom=10&size=400x400&sensor=false&style=feature:all|element:labels|visibility:off" className="w-full h-full object-cover opacity-80" alt="Map" />
+                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full border-2 border-white overflow-hidden shadow-lg z-10 bg-white">
+                        <img src="/images/ext1.png" className="w-full h-full object-cover" alt="Place" />
+                     </div>
+                  </div>
+                  <span className="text-[15px] px-1 font-semibold text-[#1F1F1F]">Places</span>
+                </div>
+                
               </div>
             </div>
           )}
