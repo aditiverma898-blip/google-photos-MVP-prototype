@@ -323,16 +323,38 @@ export default function App() {
 
           <div className="flex-1 overflow-y-auto scrollbar-hide pb-28">
             <div className="flex gap-3 px-4 py-3 overflow-x-auto scrollbar-hide">
-              <div className="flex-shrink-0 w-[150px] h-[220px] rounded-[24px] bg-[#1a237e] text-white p-4 flex flex-col justify-end relative overflow-hidden shadow-sm">
-                <img src="/images/stage2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="AUG" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
-                <span className="relative z-20 text-[32px] font-bold tracking-tight leading-none mb-1 drop-shadow-md">AUG</span>
-                <span className="relative z-20 text-[14px] font-medium drop-shadow-md">Best of August</span>
+              <div className="flex-shrink-0 w-[140px] h-[210px] rounded-[24px] text-white p-3 flex flex-col justify-end relative overflow-hidden shadow-sm">
+                <img src="/images/dash1.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Selfies" />
+                <svg className="absolute top-0 left-0 w-[90px] h-[90px] z-10 opacity-95" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#E8ED5C" d="M0,0 L100,0 C100,50 50,100 0,100 Z" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10"></div>
+                <div className="relative z-20 flex flex-col items-center pb-2">
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">Selfies</span>
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">Nov 2022</span>
+                </div>
               </div>
-              <div className="flex-shrink-0 w-[150px] h-[220px] rounded-[24px] bg-[#004d40] text-white p-4 flex flex-col justify-center items-center relative overflow-hidden shadow-sm">
-                <img src="/images/int2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Menu" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10"></div>
-                <span className="relative z-20 text-[22px] font-bold text-center leading-snug drop-shadow-md">What's on the menu?</span>
+              <div className="flex-shrink-0 w-[140px] h-[210px] rounded-[24px] text-white p-3 flex flex-col justify-end relative overflow-hidden shadow-sm">
+                <img src="/images/stage2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Featured scenes" />
+                <svg className="absolute top-0 left-0 w-full h-[140px] z-10 opacity-95" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#97E366" d="M0,0 L100,0 C100,30 30,30 20,60 C10,90 40,100 0,100 Z" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10"></div>
+                <div className="relative z-20 flex flex-col items-center pb-2">
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">Featured scenes</span>
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">2025</span>
+                </div>
+              </div>
+              <div className="flex-shrink-0 w-[140px] h-[210px] rounded-[24px] text-white p-3 flex flex-col justify-end relative overflow-hidden shadow-sm">
+                <img src="/images/conf2.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Together" />
+                <svg className="absolute top-0 right-0 w-full h-[70px] z-10 opacity-95" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#F2775C" d="M0,0 L100,0 L100,100 C70,40 30,100 0,60 Z" />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10"></div>
+                <div className="relative z-20 flex flex-col items-center pb-2">
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">Together</span>
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">Over the years</span>
+                </div>
               </div>
             </div>
 
