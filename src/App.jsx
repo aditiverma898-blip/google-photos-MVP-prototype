@@ -349,9 +349,12 @@ export default function App() {
               )}
               <button 
                 onClick={() => setScreen('1B')}
-                className="w-16 h-16 rounded-[22px] bg-[#1a73e8] flex items-center justify-center text-white shadow-[0_8px_24px_rgba(26,115,232,0.4)] hover:scale-105 transition-transform relative z-20"
+                className="w-16 h-16 rounded-full bg-[#F9E6DF] flex items-center justify-center text-[#3e2723] shadow-[0_4px_12px_rgba(0,0,0,0.1)] hover:scale-105 transition-transform relative z-20"
               >
-                <Search size={28} />
+                <div className="relative">
+                  <Search size={26} strokeWidth={2.5} />
+                  <Sparkles size={12} className="absolute -top-1 -right-1" strokeWidth={3} />
+                </div>
               </button>
             </div>
           </div>
