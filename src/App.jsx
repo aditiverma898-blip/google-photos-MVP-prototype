@@ -521,6 +521,7 @@ export default function App() {
               ))}
             </div>
           </div>
+          </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-4 pb-6 flex justify-between items-center bg-gradient-to-t from-[#F8F9FA] via-[#F8F9FA] to-transparent pt-12 z-20 pointer-events-none">
             <div className="flex bg-[#F9E6DF] rounded-[30px] p-2 gap-1 shadow-[0_4px_12px_rgba(0,0,0,0.1)] pointer-events-auto">
@@ -554,9 +555,7 @@ export default function App() {
               </button>
             </div>
           </div>
-        </div>
-        </div>
-      )}
+        )}
 
       {/* 2. SCREEN 1B: SEARCH CANVAS */}
       {screen === '1B' && (
