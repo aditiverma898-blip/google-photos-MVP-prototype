@@ -150,7 +150,7 @@ const SCENARIO_DATA = {
     stacks: [
       { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Gmail ✉️", "Photo Timestamp 🕒"] },
       { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time ✉️", "Facial Recognition 👤"], gridImages: ['/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png'] },
-      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"] }
+      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"], gridImages: ['/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png'] }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
     example: 'e.g., "holding merch"',
