@@ -186,6 +186,7 @@ export default function App() {
 
   const [openDropdownId, setOpenDropdownId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalIndex, setActiveModalIndex] = useState(0);
   
   const [isScrollingFriction, setIsScrollingFriction] = useState(false);
   const [isolatedChipIndex, setIsolatedChipIndex] = useState(null);
@@ -516,7 +517,7 @@ export default function App() {
                 {/* 3x2 PHOTO GRID COLLAGE */}
                 <div 
                   className="grid grid-cols-3 gap-1 w-full rounded-[24px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] cursor-pointer group border border-gray-100 bg-[#f1f3f4]"
-                  onClick={() => { if (idx === 0) setIsModalOpen(true); }}
+                  onClick={() => { setActiveModalIndex(idx); setIsModalOpen(true); }}
                 >
                   {Array.from({ length: 5 }).map((_, i) => {
                     const imgSrc = stack.gridImages 
@@ -620,7 +621,8 @@ export default function App() {
                 
                 <div className={`grid grid-cols-3 gap-1 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${isIsolated ? '-translate-y-[100vh] opacity-0' : 'translate-y-0 opacity-100'}`}>
                   {Array.from({ length: 12 }).map((_, i) => {
-                    const imgSrc = activeScenario.grid ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`;
+                    const stack = activeScenario.stacks[activeModalIndex || 0];
+                    const imgSrc = (stack?.gridImages && stack.gridImages[i]) ? stack.gridImages[i] : (activeScenario.grid && activeScenario.grid[i] ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`);
                     return (
                       <div key={i} className="aspect-square bg-[#e0e0e0] flex items-center justify-center overflow-hidden cursor-pointer" onClick={() => !isIsolated && setFullScreenImage(imgSrc)}>
                         <img src={imgSrc} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="grid item" />
@@ -685,7 +687,7 @@ export default function App() {
                 <div 
                   className={`absolute bottom-0 left-0 right-0 transform transition-transform duration-500 ease-out z-50 bg-white rounded-t-3xl border-t border-gray-200 p-4 shadow-[0_-10px_40px_rgba(0,0,0,0.15)] ${isScrollingFriction ? 'translate-y-0' : 'translate-y-full'}`}
                 >
-                  <div className="w-10 h-1.5 bg-[#e0e0e0] rounded-full mx-auto mb-4"></div>
+                  <div className="w-16 h-4 mx-auto flex items-center justify-center cursor-pointer mb-2" onClick={() => setIsScrollingFriction(false)}><div className="w-10 h-1.5 bg-[#e0e0e0] rounded-full"></div></div>
                   
                   {/* AI Explanation Header */}
                   <div className="flex flex-col items-center mb-4">
@@ -773,4 +775,5 @@ export default function App() {
     </div>
   );
 }
+
 
