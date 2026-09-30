@@ -593,9 +593,10 @@ export default function App() {
                 className="flex-1 overflow-y-auto p-5 scrollbar-hide relative pb-60"
                 onScroll={handleModalScroll}
               >
-                {isIsolated && <div className="fixed inset-0 bg-black/65 z-30 transition-opacity"></div>}
+                {/* Dim background or white background when isolated */}
+                {isIsolated && <div className="fixed inset-0 bg-[#f1f3f4] z-30 animate-fade-in"></div>}
                 
-                <div className={`grid grid-cols-3 gap-1 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isIsolated ? 'scale-110 relative z-20 mt-16 opacity-30' : ''}`}>
+                <div className={`grid grid-cols-3 gap-1 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${isIsolated ? '-translate-y-[100vh] opacity-0' : 'translate-y-0 opacity-100'}`}>
                   {Array.from({ length: 12 }).map((_, i) => {
                     const imgSrc = activeScenario.grid ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`;
                     return (
@@ -607,7 +608,10 @@ export default function App() {
                 </div>
 
                 {isIsolated && (
-                  <div className="absolute inset-0 z-40 flex flex-col items-center justify-start pt-12 pb-20 p-4 animate-fade-in pointer-events-none overflow-y-auto scrollbar-hide">
+                  <div 
+                    className="absolute inset-0 z-40 flex flex-col items-center justify-start pt-12 pb-20 p-4 pointer-events-none overflow-y-auto scrollbar-hide animate-slide-up"
+                    style={{ animationDuration: '0.6s', animationFillMode: 'both', animationDelay: '0.3s' }}
+                  >
                     <div className="flex flex-wrap justify-center gap-3 pointer-events-auto max-w-[340px]">
                        {Array.from({ length: fragmentsCount }).map((_, i) => {
                          const fragSrc = activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] && activeScenario.fragments[isolatedChipIndex][i];
