@@ -193,6 +193,7 @@ export default function App() {
   const [showNoResultPopup, setShowNoResultPopup] = useState(false);
   const [showSearchTooltip, setShowSearchTooltip] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState(null);
+  const [activeTab, setActiveTab] = useState('Photos');
 
   useEffect(() => {
     let tooltipTimer;
@@ -303,7 +304,11 @@ export default function App() {
       {/* 1. SCREEN 1: NATIVE FEED VIEW */}
       {screen === '1' && (
         <div className="flex-1 flex flex-col h-full bg-[#F8F9FA] animate-fade-in relative">
-          <header className="flex justify-between items-center p-4 z-10 bg-[#F8F9FA]">
+          {activeTab === 'Collections' && <img src="/images/tab_collections.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Collections" />}
+          {activeTab === 'Create' && <img src="/images/tab_create.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Create" />}
+          
+          <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
+            <header className="flex justify-between items-center p-4 z-10 bg-[#F8F9FA]">
             <div className="flex items-center gap-2 bg-[#F9E6DF] px-3 py-1.5 rounded-full text-[13px] font-medium text-[#3e2723]">
               <Cloud size={16} /> Backup complete
             </div>
@@ -339,13 +344,13 @@ export default function App() {
 
           <div className="absolute bottom-0 left-0 right-0 p-4 pb-6 flex justify-between items-center bg-gradient-to-t from-[#F8F9FA] via-[#F8F9FA] to-transparent pt-12 z-20 pointer-events-none">
             <div className="flex bg-[#F9E6DF] rounded-[30px] p-2 gap-1 shadow-[0_4px_12px_rgba(0,0,0,0.1)] pointer-events-auto">
-              <div className="flex items-center gap-1.5 px-4 py-2 rounded-[20px] bg-white/50 text-[14px] font-semibold text-[#3e2723]">
+              <div onClick={() => setActiveTab('Photos')} className={`flex items-center cursor-pointer gap-1.5 px-4 py-2 rounded-[20px] ${activeTab === 'Photos' ? 'bg-white/50' : ''} text-[14px] font-semibold text-[#3e2723]`}>
                 <ImageIcon size={20} className="fill-current text-[#3e2723]" /> Photos
               </div>
-              <div className="flex items-center gap-1.5 px-4 py-2 rounded-[20px] text-[14px] font-semibold text-[#3e2723]">Collections</div>
-              <div className="flex items-center gap-1.5 px-4 py-2 rounded-[20px] text-[14px] font-semibold text-[#3e2723]">Create</div>
+              <div onClick={() => setActiveTab('Collections')} className={`flex items-center cursor-pointer gap-1.5 px-4 py-2 rounded-[20px] ${activeTab === 'Collections' ? 'bg-white/50' : ''} text-[14px] font-semibold text-[#3e2723]`}>Collections</div>
+              <div onClick={() => setActiveTab('Create')} className={`flex items-center cursor-pointer gap-1.5 px-4 py-2 rounded-[20px] ${activeTab === 'Create' ? 'bg-white/50' : ''} text-[14px] font-semibold text-[#3e2723]`}>Create</div>
             </div>
-            <div className="relative pointer-events-auto">
+            <div className={`relative pointer-events-auto ${activeTab !== 'Photos' ? 'hidden' : ''}`}>
               {showSearchTooltip && (
                 <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-fade-in">
                   <span className="text-[13px] font-semibold tracking-wide">Try new ways to search ✨</span>
