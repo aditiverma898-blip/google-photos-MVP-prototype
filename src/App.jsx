@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown, Star, Archive, Trash2, Folder, Film, Layout, PlaySquare, Clapperboard } from 'lucide-react';
+import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown, Star, Archive, Trash2, Folder, Film, Layout, PlaySquare, Clapperboard, PlayCircle, Shirt, Video } from 'lucide-react';
 import './index.css';
 
 const FEED_GROUPED = [
@@ -417,37 +417,114 @@ export default function App() {
           )}
 
           {activeTab === 'Create' && (
-            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-6 px-4 bg-[#F8F9FA] animate-fade-in">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-[22px] font-semibold text-[#1F1F1F]">Create</h2>
-                <div className="flex gap-4 text-[#5F6368] items-center">
-                  <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm">A</div>
+            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-4 px-0 bg-white animate-fade-in">
+              {/* Header */}
+              <div className="flex justify-between items-center mb-6 px-4">
+                <div className="flex items-center gap-2 bg-[#FAEDE6] pl-2 pr-4 py-1.5 rounded-full opacity-80">
+                  <div className="w-5 h-5 rounded-full border-[2.5px] border-[#d2b8b1] border-t-transparent animate-spin ml-0.5"></div>
+                  <span className="text-[13px] font-semibold text-[#8b736b]">Preparing backup</span>
+                </div>
+                <div className="flex gap-4 text-[#3e2723] items-center">
+                  <FolderOpen size={24} />
+                  <div className="relative">
+                    <Plus size={24} />
+                    <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-[1.5px] border-white"></div>
+                  </div>
+                  <Bell size={24} />
+                  <div className="w-[32px] h-[32px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-[15px] border-[2px] border-[#1A73E8]">A</div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-5 mb-6 shadow-sm border border-gray-100">
-                <h3 className="text-[17px] font-semibold text-[#1F1F1F] mb-1">Make a new creation</h3>
-                <p className="text-[13px] text-gray-500 mb-6">Create a movie, collage, or animation from your photos.</p>
-                
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
-                    <Film size={26} className="text-[#1A73E8]" />
-                    <span className="font-semibold text-[13px] text-[#3c4043]">Highlight video</span>
+              {/* 2 Rows of Pills Horizontal Scroll */}
+              <div className="overflow-x-auto scrollbar-hide pb-2 px-4 mb-8">
+                <div className="flex flex-col gap-3 min-w-max">
+                  {/* Row 1 */}
+                  <div className="flex gap-3">
+                    <div className="relative bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border-[1.5px] border-[#d2b8b1] shadow-sm">
+                      <div className="absolute -top-2 left-3 bg-[#8b736b] text-white text-[9px] font-extrabold px-2 py-0.5 rounded-md uppercase tracking-wide">NEW</div>
+                      <PlayCircle size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723]">Video remix</span>
+                    </div>
+                    <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border border-transparent">
+                      <ImageIcon size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723]">Photo remix</span>
+                    </div>
+                    <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border border-transparent">
+                      <Clapperboard size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723]">Highlight video</span>
+                    </div>
+                    <div className="w-2 flex-shrink-0"></div>
                   </div>
-                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
-                    <Layout size={26} className="text-[#137333]" />
-                    <span className="font-semibold text-[13px] text-[#3c4043]">Collage</span>
-                  </div>
-                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
-                    <PlaySquare size={26} className="text-[#E37400]" />
-                    <span className="font-semibold text-[13px] text-[#3c4043]">Animation</span>
-                  </div>
-                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
-                    <Clapperboard size={26} className="text-[#C5221F]" />
-                    <span className="font-semibold text-[13px] text-[#3c4043]">Cinematic photo</span>
+                  {/* Row 2 */}
+                  <div className="flex gap-3">
+                    <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border border-transparent">
+                      <Shirt size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723]">Outfit try-on</span>
+                    </div>
+                    <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border border-transparent">
+                      <Layout size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723]">Collage</span>
+                    </div>
+                    <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 w-[140px] flex flex-col items-center justify-center gap-2 cursor-pointer border border-transparent">
+                      <Video size={22} className="text-[#3e2723]" />
+                      <span className="font-semibold text-[13px] text-[#3e2723] text-center leading-tight">Cinematic photo</span>
+                    </div>
+                    <div className="w-2 flex-shrink-0"></div>
                   </div>
                 </div>
               </div>
+
+              {/* Remix your videos */}
+              <div className="mb-10 px-4">
+                <div className="flex justify-between items-end mb-4">
+                  <h3 className="text-[22px] font-normal text-[#1F1F1F]">Remix your videos</h3>
+                  <span className="text-[14px] font-semibold text-[#8b736b] cursor-pointer">View all</span>
+                </div>
+                
+                <div className="flex gap-3 overflow-x-auto scrollbar-hide -mx-4 px-4 pb-2">
+                  <div className="min-w-[160px] h-[220px] bg-[#FAEDE6] rounded-[20px] flex flex-col overflow-hidden relative shadow-sm cursor-pointer">
+                    <div className="absolute top-2 left-2 bg-black/40 rounded-full p-1"><PlayCircle size={14} className="text-white" /></div>
+                    <div className="h-[140px] w-full"><img src="/images/stage1.png" className="w-full h-full object-cover rounded-b-[20px]" alt="Dreamy" /></div>
+                    <div className="p-3 pt-4 flex-1 flex items-start">
+                      <span className="font-medium text-[14px] text-[#3e2723] leading-tight line-clamp-2">Make it dreamy</span>
+                    </div>
+                  </div>
+                  <div className="min-w-[160px] h-[220px] bg-[#FAEDE6] rounded-[20px] flex flex-col overflow-hidden relative shadow-sm cursor-pointer">
+                    <div className="absolute top-2 left-2 bg-black/40 rounded-full p-1"><PlayCircle size={14} className="text-white" /></div>
+                    <div className="h-[140px] w-full"><img src="/images/s4_cover.jpg" className="w-full h-full object-cover rounded-b-[20px]" alt="Laser light" /></div>
+                    <div className="p-3 pt-4 flex-1 flex items-start">
+                      <span className="font-medium text-[14px] text-[#3e2723] leading-tight line-clamp-2">Add shifting laser light strobes</span>
+                    </div>
+                  </div>
+                  <div className="min-w-[160px] h-[220px] bg-[#FAEDE6] rounded-[20px] flex flex-col overflow-hidden relative shadow-sm cursor-pointer">
+                    <div className="absolute top-2 left-2 bg-black/40 rounded-full p-1"><PlayCircle size={14} className="text-white" /></div>
+                    <div className="h-[140px] w-full"><img src="/images/int1.png" className="w-full h-full object-cover rounded-b-[20px]" alt="Sunset" /></div>
+                    <div className="p-3 pt-4 flex-1 flex items-start">
+                      <span className="font-medium text-[14px] text-[#3e2723] leading-tight line-clamp-2">Give my video a sunset background</span>
+                    </div>
+                  </div>
+                  <div className="w-2 flex-shrink-0"></div>
+                </div>
+              </div>
+
+              {/* Remix your photos */}
+              <div className="px-4 mb-8">
+                <div className="flex justify-between items-end mb-4">
+                  <h3 className="text-[22px] font-normal text-[#1F1F1F]">Remix your photos</h3>
+                  <span className="text-[14px] font-semibold text-[#8b736b] cursor-pointer">View all</span>
+                </div>
+                
+                <div className="flex gap-3 overflow-x-auto scrollbar-hide -mx-4 px-4 pb-2">
+                  <div className="min-w-[280px] h-[280px] bg-[#FAEDE6] rounded-[24px] overflow-hidden relative shadow-sm cursor-pointer">
+                    <img src="/images/stage2.png" className="w-full h-full object-cover" alt="Sketch photo" />
+                  </div>
+                  <div className="min-w-[280px] h-[280px] bg-[#FAEDE6] rounded-[24px] overflow-hidden relative shadow-sm cursor-pointer">
+                    <img src="/images/stage3.png" className="w-full h-full object-cover" alt="Style photo" />
+                  </div>
+                  <div className="w-2 flex-shrink-0"></div>
+                </div>
+              </div>
+
             </div>
           )}
           
