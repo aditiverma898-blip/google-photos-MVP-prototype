@@ -192,6 +192,7 @@ export default function App() {
   const [customInput, setCustomInput] = useState('');
   const [showNoResultPopup, setShowNoResultPopup] = useState(false);
   const [showSearchTooltip, setShowSearchTooltip] = useState(false);
+  const [fullScreenImage, setFullScreenImage] = useState(null);
 
   useEffect(() => {
     let tooltipTimer;
@@ -329,8 +330,8 @@ export default function App() {
 
             <div className="grid grid-cols-3 gap-1 px-1 mt-2">
               {FEED_IMAGES.map((src, i) => (
-                <div key={i} className="aspect-square bg-[#e0e0e0] overflow-hidden">
-                   <img src={src} className="w-full h-full object-cover" alt="feed item" />
+                <div key={i} className="aspect-square bg-[#e0e0e0] overflow-hidden cursor-pointer" onClick={() => setFullScreenImage(src)}>
+                   <img src={src} className="w-full h-full object-cover hover:opacity-90 transition-opacity" alt="feed item" />
                 </div>
               ))}
             </div>
@@ -595,30 +596,36 @@ export default function App() {
                 {isIsolated && <div className="fixed inset-0 bg-black/65 z-30 transition-opacity"></div>}
                 
                 <div className={`grid grid-cols-3 gap-1 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] ${isIsolated ? 'scale-110 relative z-20 mt-16 opacity-30' : ''}`}>
-                  {Array.from({ length: 12 }).map((_, i) => (
-                    <div key={i} className="aspect-square bg-[#e0e0e0] flex items-center justify-center overflow-hidden">
-                      <img src={activeScenario.grid ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`} className="w-full h-full object-cover opacity-80" alt="grid item" />
-                    </div>
-                  ))}
+                  {Array.from({ length: 12 }).map((_, i) => {
+                    const imgSrc = activeScenario.grid ? activeScenario.grid[i] : `https://picsum.photos/seed/${activeScenario.id}grid${i}/200/200`;
+                    return (
+                      <div key={i} className="aspect-square bg-[#e0e0e0] flex items-center justify-center overflow-hidden cursor-pointer" onClick={() => !isIsolated && setFullScreenImage(imgSrc)}>
+                        <img src={imgSrc} className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity" alt="grid item" />
+                      </div>
+                    );
+                  })}
                 </div>
 
                 {isIsolated && (
                   <div className="absolute inset-0 z-40 flex flex-col items-center justify-center p-4 animate-fade-in pointer-events-none mt-10">
                     <div className="flex flex-wrap justify-center gap-3 pointer-events-auto max-w-[340px]">
-                       {Array.from({ length: fragmentsCount }).map((_, i) => (
-                        <div key={i} className="w-[140px] h-[190px] bg-white rounded-[16px] shadow-2xl border-4 border-white overflow-hidden relative transform hover:scale-105 transition-transform cursor-pointer">
-                           <div className="absolute inset-0 bg-[#f1f3f4] flex flex-col items-center justify-center gap-2">
-                             {activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] && activeScenario.fragments[isolatedChipIndex][i] ? (
-                               <img src={activeScenario.fragments[isolatedChipIndex][i]} alt={`Fragment ${i}`} className="w-full h-full object-cover" />
-                             ) : (
-                               <ImageIcon size={32} className="text-gray-400" />
-                             )}
-                           </div>
-                           <div className="absolute bottom-2 left-2 right-2 bg-[#0f9d58] text-white text-[11px] font-bold px-2 py-1.5 rounded-lg text-center shadow-md flex items-center justify-center gap-1">
-                             <Sparkles size={12} /> Target Match
-                           </div>
-                        </div>
-                      ))}
+                       {Array.from({ length: fragmentsCount }).map((_, i) => {
+                         const fragSrc = activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] && activeScenario.fragments[isolatedChipIndex][i];
+                         return (
+                          <div key={i} className="w-[140px] h-[190px] bg-white rounded-[16px] shadow-2xl border-4 border-white overflow-hidden relative transform hover:scale-105 transition-transform cursor-pointer" onClick={() => fragSrc && setFullScreenImage(fragSrc)}>
+                             <div className="absolute inset-0 bg-[#f1f3f4] flex flex-col items-center justify-center gap-2">
+                               {fragSrc ? (
+                                 <img src={fragSrc} alt={`Fragment ${i}`} className="w-full h-full object-cover" />
+                               ) : (
+                                 <ImageIcon size={32} className="text-gray-400" />
+                               )}
+                             </div>
+                             <div className="absolute bottom-2 left-2 right-2 bg-[#0f9d58] text-white text-[11px] font-bold px-2 py-1.5 rounded-lg text-center shadow-md flex items-center justify-center gap-1">
+                               <Sparkles size={12} /> Target Match
+                             </div>
+                          </div>
+                         );
+                       })}
                     </div>
                     <div className="mt-8 bg-white text-[#1F1F1F] font-semibold px-6 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.2)] text-[14px] text-center border border-gray-100 flex items-center gap-2 pointer-events-auto">
                       <Check size={18} className="text-[#0f9d58]" /> Isolated {fragmentsCount} {fragmentsCount === 1 ? 'fragment' : 'fragments'}
@@ -680,6 +687,19 @@ export default function App() {
               )}
             </div>
           )}
+        </div>
+      )}
+      {/* 5. FULLSCREEN IMAGE MODAL */}
+      {fullScreenImage && (
+        <div className="absolute inset-0 z-[100] bg-black/95 flex flex-col animate-fade-in pointer-events-auto backdrop-blur-sm">
+          <div className="flex justify-between items-center p-4 absolute top-0 w-full z-10">
+            <button onClick={() => setFullScreenImage(null)} className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors backdrop-blur-md">
+              <ArrowLeft size={24} />
+            </button>
+          </div>
+          <div className="flex-1 flex items-center justify-center overflow-hidden p-4">
+            <img src={fullScreenImage} className="w-full h-full object-contain" alt="Fullscreen" />
+          </div>
         </div>
       )}
     </div>
