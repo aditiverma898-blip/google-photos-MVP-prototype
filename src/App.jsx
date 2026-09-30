@@ -514,7 +514,9 @@ export default function App() {
                   onClick={() => { if (idx === 0) setIsModalOpen(true); }}
                 >
                   {Array.from({ length: 5 }).map((_, i) => {
-                    const imgSrc = stack.gridImages && stack.gridImages[i];
+                    const imgSrc = stack.gridImages 
+                      ? stack.gridImages[i] 
+                      : (idx === 0 && activeScenario.grid ? activeScenario.grid[i] : null);
                     return (
                       <div key={i} className="aspect-square bg-[#e8eaed] overflow-hidden relative flex items-center justify-center">
                         {imgSrc ? (
@@ -529,9 +531,11 @@ export default function App() {
                   <div className="aspect-square bg-[#e8eaed] relative overflow-hidden flex items-center justify-center">
                     {stack.gridImages && stack.gridImages[0] ? (
                       <img src={stack.gridImages[0]} className="w-full h-full object-cover" alt="more items" />
+                    ) : (idx === 0 && activeScenario.grid && activeScenario.grid[5] ? (
+                      <img src={activeScenario.grid[5]} className="w-full h-full object-cover" alt="more items" />
                     ) : (
                       <div className="w-full h-full bg-[#dcdcdc]"></div>
-                    )}
+                    ))}
                     <div className="absolute inset-0 bg-black/30 backdrop-blur-[4px] flex items-center justify-center text-white font-bold text-[20px] transition-colors duration-300 group-hover:bg-black/40">
                       +{idx === 0 ? 34 : idx === 1 ? 12 : 7}
                     </div>
