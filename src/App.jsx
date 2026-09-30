@@ -47,7 +47,7 @@ const SCENARIO_DATA = {
     subtitleText: "Context matched via Maps Timeline ('Home' Address Change) and Photo Location (New Flat).",
     stacks: [
       { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Maps Timeline 📍", "Photo Location 📌"] },
-      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"] },
+      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"], gridImages: ['/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'] },
       { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"] }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
@@ -514,7 +514,7 @@ export default function App() {
                   onClick={() => { if (idx === 0) setIsModalOpen(true); }}
                 >
                   {Array.from({ length: 5 }).map((_, i) => {
-                    const imgSrc = activeScenario.grid ? activeScenario.grid[(idx * 5 + i) % 12] : `https://picsum.photos/seed/${idx}${i}/200/200`;
+                    const imgSrc = (stack.gridImages && stack.gridImages[i]) ? stack.gridImages[i] : (activeScenario.grid ? activeScenario.grid[(idx * 5 + i) % 12] : `https://picsum.photos/seed/${idx}${i}/200/200`);
                     return (
                       <div key={i} className="aspect-square bg-gray-100 overflow-hidden relative">
                         <img src={imgSrc} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt={`grid item ${i}`} />
@@ -523,7 +523,7 @@ export default function App() {
                   })}
                   {/* The blurred 6th box */}
                   <div className="aspect-square bg-gray-200 relative overflow-hidden">
-                    <img src={activeScenario.grid ? activeScenario.grid[(idx * 5 + 5) % 12] : `https://picsum.photos/seed/blur${idx}/200/200`} className="w-full h-full object-cover" alt="more items" />
+                    <img src={stack.gridImages ? stack.gridImages[0] : (activeScenario.grid ? activeScenario.grid[(idx * 5 + 5) % 12] : `https://picsum.photos/seed/blur${idx}/200/200`)} className="w-full h-full object-cover" alt="more items" />
                     <div className="absolute inset-0 bg-black/40 backdrop-blur-[3px] flex items-center justify-center text-white font-bold text-[20px] transition-colors duration-300 group-hover:bg-black/50">
                       +{idx === 0 ? 34 : idx === 1 ? 12 : 7}
                     </div>
