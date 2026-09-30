@@ -336,7 +336,7 @@ export default function App() {
             </div>
             <div className="relative pointer-events-auto">
               {showSearchTooltip && (
-                <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-bounce">
+                <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-fade-in">
                   <span className="text-[13px] font-semibold tracking-wide">Try new ways to search ✨</span>
                   <button 
                     onClick={(e) => { e.stopPropagation(); setShowSearchTooltip(false); }} 
