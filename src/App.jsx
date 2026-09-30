@@ -692,9 +692,9 @@ export default function App() {
               {/* CRITICAL INTERACTION: DUAL-OPTION PROACTIVE POP-UP SHEET */}
               {!isIsolated && (
                 <div 
-                  className={`absolute bottom-0 left-0 right-0 transform transition-transform duration-500 ease-out z-50 bg-white rounded-t-3xl border-t border-gray-200 p-4 shadow-[0_-10px_40px_rgba(0,0,0,0.15)] ${isScrollingFriction ? 'translate-y-0' : 'translate-y-full'}`}
+                  className={`absolute bottom-0 left-0 right-0 transform transition-transform duration-500 ease-out z-50 bg-white rounded-t-3xl border-t border-gray-200 p-4 shadow-[0_-10px_40px_rgba(0,0,0,0.15)] ${isScrollingFriction ? 'translate-y-0' : 'translate-y-[calc(100%-35px)]'}`}
                 >
-                  <div className="w-16 h-4 mx-auto flex items-center justify-center cursor-pointer mb-2" onClick={() => setIsScrollingFriction(false)}><div className="w-10 h-1.5 bg-[#e0e0e0] rounded-full"></div></div>
+                  <div className="w-16 h-4 mx-auto flex items-center justify-center cursor-pointer mb-2" onClick={() => setIsScrollingFriction(!isScrollingFriction)}><div className="w-10 h-1.5 bg-[#e0e0e0] rounded-full"></div></div>
                   
                   {/* AI Explanation Header */}
                   <div className="flex flex-col items-center mb-4">
@@ -784,6 +784,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
