@@ -530,9 +530,7 @@ export default function App() {
           
           <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
             
-            <div className={`absolute top-[70px] left-1/2 -translate-x-1/2 z-[100] bg-[#F9E6DF] shadow-md -translate-y-2 text-[#3e2723] px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm transition-opacity duration-300 pointer-events-none ${showScrollDate ? 'opacity-100' : 'opacity-0'}`}>
-              25 Sept
-            </div>
+
 
             <header className="flex justify-between items-center p-4 z-10 bg-[#F8F9FA]">
             <div className="flex items-center gap-2 bg-[#F9E6DF] px-3 py-1.5 rounded-full text-[13px] font-medium text-[#3e2723]">
