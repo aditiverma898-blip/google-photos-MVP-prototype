@@ -199,10 +199,11 @@ export default function App() {
   const scrollTimeoutRef = useRef(null);
 
   const handleFeedScroll = (e) => {
-    if (e.target.scrollTop > 40) {
+    const scrollTop = e.currentTarget.scrollTop;
+    if (scrollTop > 10) {
       setShowScrollDate(true);
       if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
-      scrollTimeoutRef.current = setTimeout(() => setShowScrollDate(false), 1200);
+      scrollTimeoutRef.current = setTimeout(() => setShowScrollDate(false), 1500);
     } else {
       setShowScrollDate(false);
     }
@@ -322,7 +323,7 @@ export default function App() {
           
           <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
             
-            <div className={`absolute top-[70px] left-1/2 -translate-x-1/2 z-40 bg-[#F9E6DF] text-[#3e2723] px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm transition-opacity duration-300 pointer-events-none ${showScrollDate ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`absolute top-[70px] left-1/2 -translate-x-1/2 z-[100] bg-[#F9E6DF] shadow-md -translate-y-2 text-[#3e2723] px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm transition-opacity duration-300 pointer-events-none ${showScrollDate ? 'opacity-100' : 'opacity-0'}`}>
               Fri, 25 Sept
             </div>
 
@@ -816,6 +817,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
