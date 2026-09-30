@@ -520,9 +520,16 @@ export default function App() {
                   <div className="relative mt-2">
                     <button 
                       onClick={(e) => toggleDropdown(idx, e)}
-                      className={`flex items-start gap-2 px-3 py-2 rounded-[12px] text-[12px] font-bold w-fit max-w-full transition-colors text-left ${getBadgeColors(stack.color)}`}
+                      className={`flex items-start gap-3 px-3 py-2 rounded-[12px] w-fit max-w-full transition-colors text-left ${getBadgeColors(stack.color)}`}
                     >
-                      <span className="whitespace-normal leading-snug">{stack.badge}</span>
+                      <div className="flex flex-col">
+                        <span className="text-[12px] font-bold">{stack.badge.split(' — ')[0]}</span>
+                        {stack.badge.split(' — ')[1] && (
+                          <span className="text-[10px] font-semibold leading-tight mt-0.5 opacity-85">
+                            {stack.badge.split(' — ')[1]}
+                          </span>
+                        )}
+                      </div>
                       <ChevronDown size={14} className={`flex-shrink-0 mt-0.5 transition-transform duration-300 ${openDropdownId === idx ? 'rotate-180' : ''}`} />
                     </button>
                     {openDropdownId === idx && stack.dropdownItems && (
