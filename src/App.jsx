@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle } from 'lucide-react';
+import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X } from 'lucide-react';
 import './index.css';
 
 const FEED_IMAGES = [
@@ -191,6 +191,7 @@ export default function App() {
   const [isolatedChipIndex, setIsolatedChipIndex] = useState(null);
   const [customInput, setCustomInput] = useState('');
   const [showNoResultPopup, setShowNoResultPopup] = useState(false);
+  const [showSearchTooltip, setShowSearchTooltip] = useState(true);
   
   const isIsolated = isolatedChipIndex !== null;
   const activeScenario = SCENARIO_DATA[scenarioId];
@@ -333,12 +334,26 @@ export default function App() {
               <div className="flex items-center gap-1.5 px-4 py-2 rounded-[20px] text-[14px] font-semibold text-[#3e2723]">Collections</div>
               <div className="flex items-center gap-1.5 px-4 py-2 rounded-[20px] text-[14px] font-semibold text-[#3e2723]">Create</div>
             </div>
-            <button 
-              onClick={() => setScreen('1B')}
-              className="w-16 h-16 rounded-[22px] bg-[#1a73e8] flex items-center justify-center text-white shadow-[0_8px_24px_rgba(26,115,232,0.4)] pointer-events-auto hover:scale-105 transition-transform"
-            >
-              <Search size={28} />
-            </button>
+            <div className="relative pointer-events-auto">
+              {showSearchTooltip && (
+                <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-bounce">
+                  <span className="text-[13px] font-semibold tracking-wide">Try new ways to search ✨</span>
+                  <button 
+                    onClick={(e) => { e.stopPropagation(); setShowSearchTooltip(false); }} 
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                  >
+                    <X size={16} />
+                  </button>
+                  <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-[#323232] transform rotate-45 border-b border-r border-[#444]"></div>
+                </div>
+              )}
+              <button 
+                onClick={() => setScreen('1B')}
+                className="w-16 h-16 rounded-[22px] bg-[#1a73e8] flex items-center justify-center text-white shadow-[0_8px_24px_rgba(26,115,232,0.4)] hover:scale-105 transition-transform relative z-20"
+              >
+                <Search size={28} />
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -402,7 +417,7 @@ export default function App() {
             </div>
 
             <div className="px-4 pt-6">
-              <h3 className="text-[13px] font-bold text-gray-500 mb-4 tracking-wide uppercase">Try these searches:</h3>
+              <h3 className="text-[13px] font-bold text-gray-500 mb-4 tracking-wide uppercase">Try asking:</h3>
               <div className="flex flex-col gap-3">
                 {Object.values(SCENARIO_DATA).map((scenario) => (
                   <button 
@@ -410,7 +425,6 @@ export default function App() {
                     onClick={() => handleSearchClick(scenario.id, scenario.query)}
                     className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all text-left group"
                   >
-                    <Sparkles size={22} className={`flex-shrink-0 group-hover:scale-110 transition-transform ${scenario.id === 1 ? 'text-blue-500' : scenario.id === 2 ? 'text-amber-500' : scenario.id === 3 ? 'text-green-500' : 'text-purple-500'}`} />
                     <div className="text-[14.5px] font-semibold text-gray-800 leading-snug">{scenario.query}</div>
                   </button>
                 ))}
