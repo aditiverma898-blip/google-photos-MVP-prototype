@@ -756,32 +756,35 @@ export default function App() {
             <img src={fullScreenImage} className="w-full h-full object-contain" alt="Fullscreen" />
           </div>
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[280px]">
-            {/* Feedback Widget for Fullscreen */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-[16px] p-4 shadow-2xl border border-white/20">
-              <div className="text-center text-[13px] font-semibold text-white mb-3 drop-shadow-md">
-                Got the exact photo you needed?
+          {isIsolated && (
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[280px]">
+              {/* Feedback Widget for Fullscreen */}
+              <div className="bg-white/10 backdrop-blur-xl rounded-[16px] p-4 shadow-2xl border border-white/20">
+                <div className="text-center text-[13px] font-semibold text-white mb-3 drop-shadow-md">
+                  Got the exact photo you needed?
+                </div>
+                <div className="flex justify-center gap-4 mb-3">
+                  <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-green-500/80 text-white transition-colors">
+                    <ThumbsUp size={18} />
+                  </button>
+                  <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-red-500/80 text-white transition-colors">
+                    <ThumbsDown size={18} />
+                  </button>
+                </div>
+                <input 
+                  type="text" 
+                  placeholder="Add feedback..." 
+                  className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-[12px] text-white focus:outline-none focus:border-blue-400 placeholder-gray-400"
+                />
               </div>
-              <div className="flex justify-center gap-4 mb-3">
-                <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-green-500/80 text-white transition-colors">
-                  <ThumbsUp size={18} />
-                </button>
-                <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-red-500/80 text-white transition-colors">
-                  <ThumbsDown size={18} />
-                </button>
-              </div>
-              <input 
-                type="text" 
-                placeholder="Add feedback..." 
-                className="w-full bg-black/40 border border-white/20 rounded-lg px-3 py-2 text-[12px] text-white focus:outline-none focus:border-blue-400 placeholder-gray-400"
-              />
             </div>
-          </div>
+          )}
         </div>
       )}
     </div>
   );
 }
+
 
 
 
