@@ -291,8 +291,101 @@ export default function App() {
       {/* 1. SCREEN 1: NATIVE FEED VIEW */}
       {screen === '1' && (
         <div className="flex-1 flex flex-col h-full bg-[#F8F9FA] animate-fade-in relative">
-          {activeTab === 'Collections' && <img src="/images/tab_collections.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Collections" />}
-          {activeTab === 'Create' && <img src="/images/tab_create.png" className="absolute inset-0 w-full h-full object-cover z-0" alt="Create" />}
+          {activeTab === 'Collections' && (
+            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-6 px-4 bg-[#F8F9FA] animate-fade-in">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-[22px] font-semibold text-[#1F1F1F]">Collections</h2>
+                <div className="flex gap-4 text-[#5F6368] items-center">
+                  <Search size={22} />
+                  <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm">A</div>
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="bg-[#E8F0FE] text-[#1967D2] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+                  <Star size={24} className="mb-2" />
+                  <span className="font-semibold text-[15px]">Favorites</span>
+                </div>
+                <div className="bg-[#FCE8E6] text-[#C5221F] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+                  <Archive size={24} className="mb-2" />
+                  <span className="font-semibold text-[15px]">Archive</span>
+                </div>
+                <div className="bg-[#E6F4EA] text-[#137333] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+                  <Trash2 size={24} className="mb-2" />
+                  <span className="font-semibold text-[15px]">Trash</span>
+                </div>
+                <div className="bg-[#FEF7E0] text-[#E37400] rounded-[20px] p-4 flex flex-col justify-between h-[110px] cursor-pointer shadow-sm hover:shadow-md transition-shadow">
+                  <Folder size={24} className="mb-2" />
+                  <span className="font-semibold text-[15px]">Locked Folder</span>
+                </div>
+              </div>
+              
+              <div className="mb-6">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-[16px] font-semibold text-[#1F1F1F]">Albums</h3>
+                  <span className="text-[13px] text-[#1A73E8] font-semibold cursor-pointer">View all</span>
+                </div>
+                <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
+                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
+                      <img src="/images/new_s2_yellow_1.jpg" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                    </div>
+                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Basement Parking</p>
+                    <p className="text-[12px] text-gray-500">12 photos</p>
+                  </div>
+                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
+                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
+                      <img src="/images/conf1.png" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                    </div>
+                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Conference Rooms</p>
+                    <p className="text-[12px] text-gray-500">22 photos</p>
+                  </div>
+                  <div className="flex-shrink-0 w-[140px] cursor-pointer group">
+                    <div className="w-[140px] h-[140px] rounded-2xl overflow-hidden mb-2 shadow-sm relative">
+                      <img src="/images/new_s3_flowcharts_1.jpg" className="w-full h-full object-cover group-hover:opacity-90 transition-opacity" />
+                    </div>
+                    <p className="text-[14px] font-semibold text-[#1F1F1F] leading-tight truncate">Flowcharts</p>
+                    <p className="text-[12px] text-gray-500">8 photos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'Create' && (
+            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-6 px-4 bg-[#F8F9FA] animate-fade-in">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-[22px] font-semibold text-[#1F1F1F]">Create</h2>
+                <div className="flex gap-4 text-[#5F6368] items-center">
+                  <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm">A</div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-3xl p-5 mb-6 shadow-sm border border-gray-100">
+                <h3 className="text-[17px] font-semibold text-[#1F1F1F] mb-1">Make a new creation</h3>
+                <p className="text-[13px] text-gray-500 mb-6">Create a movie, collage, or animation from your photos.</p>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Film size={26} className="text-[#1A73E8]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Highlight video</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Layout size={26} className="text-[#137333]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Collage</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <PlaySquare size={26} className="text-[#E37400]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Animation</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Clapperboard size={26} className="text-[#C5221F]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Cinematic photo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
           
           <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
             
