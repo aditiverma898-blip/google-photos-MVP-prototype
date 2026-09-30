@@ -46,10 +46,10 @@ const SCENARIO_DATA = {
     header: "Fetched 312 photos from flat move-in",
     subtitleText: "Context matched via Maps Timeline ('Home' Address Change) and Photo Location (New Flat).",
     stacks: [
-      { title: "Lease Documents (Move-In Window)", badge: "4/4 Match [Maps 📍 + Location 📌]", color: "green" },
-      { title: "Empty Apartment Interiors", badge: "3/4 Match", color: "amber" },
+      { title: "Lease Documents (Move-In Window)", badge: "100% Match [Maps 📍 + Location 📌]", color: "green" },
+      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber" },
       { title: "Moving Truck & Unpacking", badge: "Temporal Anchor", color: "blue" },
-      { title: "Building Exterior & Parking", badge: "2/4 Broad Match", color: "gray" }
+      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray" }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
     example: 'e.g., "blue pen"',
@@ -81,10 +81,10 @@ const SCENARIO_DATA = {
     header: "Fetched 204 photos from resort offsite",
     subtitleText: "Context matched via Google Calendar ('Team Offsite' Event) and Maps Timeline (Resort Location).",
     stacks: [
-      { title: "Whiteboards & Screens (Offsite Window)", badge: "4/4 Match [Calendar 📅 + Maps 📍]", color: "green" },
-      { title: "Conference Room Interiors", badge: "3/4 Match", color: "amber" },
+      { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match [Calendar 📅 + Maps 📍]", color: "green" },
+      { title: "Conference Room Interiors", badge: "75% Match", color: "amber" },
       { title: "Team Lunch & Group Activities", badge: "Temporal Anchor", color: "blue" },
-      { title: "All Whiteboards (General)", badge: "2/4 Broad Match", color: "gray" }
+      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray" }
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
     example: 'e.g., "Q3 Marketing Funnel"',
@@ -116,8 +116,8 @@ const SCENARIO_DATA = {
     header: "Fetched 90 photos from airport arrival",
     subtitleText: "Context matched via Gmail (Flight Booking) and Maps Timeline (Airport Drop-off).",
     stacks: [
-      { title: "Basement Parking & Pillars (Arrival Window)", badge: "4/4 Match [Gmail ✉️ + Maps 📍]", color: "green" },
-      { title: "Terminal Curbside & Drop-off", badge: "3/4 Match", color: "amber" },
+      { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match [Gmail ✉️ + Maps 📍]", color: "green" },
+      { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber" },
       { title: "Inside Terminal & Check-in Gates", badge: "Post-Event", color: "blue" },
       { title: "In-Car Dash & Highway Transit", badge: "Pre-Event", color: "gray" }
     ],
@@ -151,10 +151,10 @@ const SCENARIO_DATA = {
     header: "Fetched 109 photos from concert exit",
     subtitleText: "Context matched via Gmail (Event Ticket) and Photo Timestamp (Post-Concert).",
     stacks: [
-      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "4/4 Match [Gmail ✉️ + Time 🕒]", color: "green" },
-      { title: "Live Stage & Crowd (Mid-Event)", badge: "3/4 Match", color: "amber" },
+      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match [Gmail ✉️ + Time 🕒]", color: "green" },
+      { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber" },
       { title: "Entry Gates & Queues (Pre-Show)", badge: "Pre-Event", color: "blue" },
-      { title: "Merch Stalls & Outer Arena", badge: "2/4 Broad Match", color: "gray" }
+      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray" }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
     example: 'e.g., "holding merch"',
@@ -486,11 +486,8 @@ export default function App() {
             </div>
           </header>
           
-          <div className="px-5 pb-4 pt-2 border-b border-gray-50">
-            <h2 className="text-[22px] font-medium text-[#1F1F1F] leading-tight mb-1.5">
-              {activeScenario.header}
-            </h2>
-            <p className="text-[14px] text-[#444746] leading-snug pr-4">
+          <div className="px-5 pb-4 pt-4 border-b border-gray-50">
+            <p className="text-[15px] font-medium text-[#1F1F1F] leading-snug pr-4">
               {activeScenario.subtitleText || "Automatically separated into 4 distinct context groups to help you find exactly what you're looking for."}
             </p>
           </div>
