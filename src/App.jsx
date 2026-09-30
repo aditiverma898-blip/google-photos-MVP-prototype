@@ -115,8 +115,8 @@ const SCENARIO_DATA = {
     subtitleText: "Context matched via Gmail (Flight Booking) and Maps Timeline (Airport Drop-off).",
     stacks: [
       { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Gmail ✉️", "Maps Timeline 📍"] },
-      { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Flight Itinerary ✉️", "Visual Context 👁️"], gridImages: ['/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png'] },
-      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'] }
+      { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Flight Itinerary ✉️", "Visual Context 👁️"], gridImages: ['/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png', '/images/term6.png', '/images/term7.png', '/images/term8.png', '/images/term9.png', '/images/term10.png'] },
+      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png', '/images/dash6.png', '/images/dash7.png', '/images/dash8.png', '/images/dash9.png', '/images/dash10.png'] }
     ],
     chips: ["Yellow Pillar 🟡", "Printed Parking Ticket 🎫", "Near the Elevator 🛗"],
     example: 'e.g., "level 2"',
@@ -150,7 +150,7 @@ const SCENARIO_DATA = {
     stacks: [
       { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Gmail ✉️", "Photo Timestamp 🕒"] },
       { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time ✉️", "Facial Recognition 👤"], gridImages: ['/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png'] },
-      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"], gridImages: ['/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png'] }
+      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"], gridImages: ['/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png', '/images/merch6.png', '/images/merch7.png', '/images/merch8.png', '/images/merch9.png', '/images/merch10.png'] }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
     example: 'e.g., "holding merch"',
