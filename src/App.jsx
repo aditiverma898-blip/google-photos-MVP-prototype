@@ -550,7 +550,7 @@ export default function App() {
               <div onClick={() => setActiveTab('Collections')} className={`flex items-center cursor-pointer gap-1.5 px-4 py-2 rounded-[20px] ${activeTab === 'Collections' ? 'bg-white/50' : ''} text-[14px] font-semibold text-[#3e2723]`}>Collections</div>
               <div onClick={() => setActiveTab('Create')} className={`flex items-center cursor-pointer gap-1.5 px-4 py-2 rounded-[20px] ${activeTab === 'Create' ? 'bg-white/50' : ''} text-[14px] font-semibold text-[#3e2723]`}>Create</div>
             </div>
-            <div className={`relative pointer-events-auto ${activeTab !== 'Photos' ? 'hidden' : ''}`}>
+            <div className="relative pointer-events-auto">
               {showSearchTooltip && (
                 <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-fade-in">
                   <span className="text-[13px] font-semibold tracking-wide">Try new ways to search ✨</span>
