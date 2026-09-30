@@ -555,7 +555,8 @@ export default function App() {
               </button>
             </div>
           </div>
-        )}
+        </div>
+      )}
 
       {/* 2. SCREEN 1B: SEARCH CANVAS */}
       {screen === '1B' && (
