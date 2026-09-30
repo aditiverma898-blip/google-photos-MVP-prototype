@@ -4,46 +4,53 @@ import './index.css';
 
 const FEED_GROUPED = [
   {
-    date: "Fri, 25 Sept",
+    date: "25 Sept",
+    images: [
+      '/images/new_s4_checklist_1.jpg', '/images/new_s4_checklist_2.jpg', '/images/new_s4_checklist_3.jpg',
+      '/images/new_s4_blueink_1.jpg', '/images/new_s4_blueink_2.jpg', '/images/new_s4_blueink_3.jpg',
+      '/images/new_s4_hand_1.jpg', '/images/new_s4_hand_2.jpg',
+      '/images/new_s4_noise_1.jpg', '/images/new_s4_noise_2.jpg', '/images/new_s4_noise_3.jpg', '/images/new_s4_noise_4.jpg',
+      '/images/s4_cover.jpg',
+      '/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'
+    ]
+  },
+  {
+    date: "12 Aug",
+    images: [
+      '/images/new_s3_flowcharts_1.jpg', '/images/new_s3_flowcharts_2.jpg', '/images/new_s3_flowcharts_3.jpg',
+      '/images/new_s3_postits_1.jpg', '/images/new_s3_postits_2.jpg',
+      '/images/new_s3_projector_1.jpg', '/images/new_s3_projector_2.jpg', '/images/new_s3_projector_3.jpg',
+      '/images/new_s3_noise_1.jpg', '/images/new_s3_noise_2.jpg', '/images/new_s3_noise_3.jpg', '/images/new_s3_noise_4.jpg',
+      '/images/s3_cover.jpg',
+      '/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png',
+      '/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'
+    ]
+  },
+  {
+    date: "2 Aug",
+    images: [
+      '/images/new_s2_yellow_1.jpg', '/images/new_s2_yellow_2.jpg', '/images/new_s2_yellow_3.jpg',
+      '/images/new_s2_ticket_1.jpg', '/images/new_s2_ticket_2.jpg',
+      '/images/new_s2_elevator_1.jpg', '/images/new_s2_elevator_2.jpg',
+      '/images/new_s2_level2_1.jpg',
+      '/images/new_s2_noise_1.jpg', '/images/new_s2_noise_2.jpg', '/images/new_s2_noise_3.jpg', '/images/new_s2_noise_4.jpg', '/images/new_s2_noise_5.jpg',
+      '/images/s2_cover.jpg',
+      '/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png',
+      '/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'
+    ]
+  },
+  {
+    date: "4 March",
     images: [
       '/images/new_s1_red_1.jpg', '/images/new_s1_red_2.jpg', '/images/new_s1_red_3.jpg',
       '/images/new_s1_green_1.jpg', '/images/new_s1_green_2.jpg', '/images/new_s1_green_3.jpg',
       '/images/new_s1_gate_1.jpg', '/images/new_s1_gate_2.jpg',
       '/images/new_s1_merch_1.jpg',
       '/images/new_s1_noise_1.jpg', '/images/new_s1_noise_2.jpg', '/images/new_s1_noise_3.jpg', '/images/new_s1_noise_4.jpg',
-      '/images/new_s2_yellow_1.jpg', '/images/new_s2_yellow_2.jpg', '/images/new_s2_yellow_3.jpg',
-      '/images/new_s2_ticket_1.jpg', '/images/new_s2_ticket_2.jpg',
-      '/images/new_s2_elevator_1.jpg', '/images/new_s2_elevator_2.jpg',
-      '/images/new_s2_level2_1.jpg',
-      '/images/new_s2_noise_1.jpg', '/images/new_s2_noise_2.jpg', '/images/new_s2_noise_3.jpg', '/images/new_s2_noise_4.jpg', '/images/new_s2_noise_5.jpg',
-      '/images/new_s3_flowcharts_1.jpg', '/images/new_s3_flowcharts_2.jpg', '/images/new_s3_flowcharts_3.jpg',
-      '/images/new_s3_postits_1.jpg', '/images/new_s3_postits_2.jpg',
-      '/images/new_s3_projector_1.jpg', '/images/new_s3_projector_2.jpg', '/images/new_s3_projector_3.jpg',
-      '/images/new_s3_noise_1.jpg', '/images/new_s3_noise_2.jpg', '/images/new_s3_noise_3.jpg', '/images/new_s3_noise_4.jpg',
-      '/images/new_s4_checklist_1.jpg', '/images/new_s4_checklist_2.jpg', '/images/new_s4_checklist_3.jpg',
-      '/images/new_s4_blueink_1.jpg', '/images/new_s4_blueink_2.jpg', '/images/new_s4_blueink_3.jpg',
-      '/images/new_s4_hand_1.jpg', '/images/new_s4_hand_2.jpg',
-      '/images/new_s4_noise_1.jpg', '/images/new_s4_noise_2.jpg', '/images/new_s4_noise_3.jpg', '/images/new_s4_noise_4.jpg',
-      '/images/s1_cover.jpg', '/images/s2_cover.jpg', '/images/s3_cover.jpg', '/images/s4_cover.jpg'
-    ]
-  },
-  {
-    date: "Wed, 2 Aug",
-    images: [
-      '/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png',
-      '/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png',
-      '/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png',
-      '/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'
-    ]
-  },
-  {
-    date: "Sat, 4 March",
-    images: [
+      '/images/s1_cover.jpg', '/images/concert_cover.jpg',
       '/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png',
       '/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png',
-      '/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png',
-      '/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png',
-      '/images/concert_cover.jpg'
+      '/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png'
     ]
   }
 ];
@@ -390,7 +397,7 @@ export default function App() {
           <div className={`flex-1 flex flex-col h-full ${activeTab === 'Photos' ? 'opacity-100 relative z-10' : 'opacity-0 pointer-events-none absolute inset-0 z-[-1]'}`}>
             
             <div className={`absolute top-[70px] left-1/2 -translate-x-1/2 z-[100] bg-[#F9E6DF] shadow-md -translate-y-2 text-[#3e2723] px-4 py-1.5 rounded-full text-[13px] font-semibold shadow-sm transition-opacity duration-300 pointer-events-none ${showScrollDate ? 'opacity-100' : 'opacity-0'}`}>
-              Fri, 25 Sept
+              25 Sept
             </div>
 
             <header className="flex justify-between items-center p-4 z-10 bg-[#F8F9FA]">
