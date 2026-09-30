@@ -116,7 +116,7 @@ const SCENARIO_DATA = {
     stacks: [
       { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Gmail ✉️", "Maps Timeline 📍"] },
       { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Flight Itinerary ✉️", "Visual Context 👁️"], gridImages: ['/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png'] },
-      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"] }
+      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'] }
     ],
     chips: ["Yellow Pillar 🟡", "Printed Parking Ticket 🎫", "Near the Elevator 🛗"],
     example: 'e.g., "level 2"',
