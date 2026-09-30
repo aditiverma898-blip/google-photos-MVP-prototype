@@ -259,6 +259,9 @@ export default function App() {
       } else if (scenarioId === 2 && (lowerInput.includes('q3') || lowerInput.includes('funnel'))) {
         setIsolatedChipIndex(3);
         matched = true;
+      } else if (scenarioId === 1 && (lowerInput.includes('blue') || lowerInput.includes('pen'))) {
+        setIsolatedChipIndex(3);
+        matched = true;
       }
       
       if (matched) {
