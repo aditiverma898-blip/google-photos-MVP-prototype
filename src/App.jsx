@@ -82,7 +82,7 @@ const SCENARIO_DATA = {
     stacks: [
       { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Google Calendar 📅", "Maps Timeline 📍"] },
       { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Calendar Topic 📅", "Visual Context 👁️"], gridImages: ['/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png'] },
-      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition 🖼️"] }
+      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition 🖼️"], gridImages: ['/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'] }
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
     example: 'e.g., "Q3 Marketing Funnel"',
