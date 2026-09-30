@@ -607,7 +607,7 @@ export default function App() {
                 </div>
 
                 {isIsolated && (
-                  <div className="absolute inset-0 z-40 flex flex-col items-center justify-center p-4 animate-fade-in pointer-events-none mt-10">
+                  <div className="absolute inset-0 z-40 flex flex-col items-center justify-start pt-12 pb-20 p-4 animate-fade-in pointer-events-none overflow-y-auto scrollbar-hide">
                     <div className="flex flex-wrap justify-center gap-3 pointer-events-auto max-w-[340px]">
                        {Array.from({ length: fragmentsCount }).map((_, i) => {
                          const fragSrc = activeScenario.fragments && activeScenario.fragments[isolatedChipIndex] && activeScenario.fragments[isolatedChipIndex][i];
