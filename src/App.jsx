@@ -46,9 +46,9 @@ const SCENARIO_DATA = {
     header: "Fetched 312 photos from flat move-in",
     subtitleText: "Context matched via Maps Timeline ('Home' Address Change) and Photo Location (New Flat).",
     stacks: [
-      { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text [Maps 📍 + Location 📌]", color: "green", dropdownItems: ["Maps Timeline Matched", "Photo Location Verified"] },
-      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep Note Context Match", "Visual Text Match"] },
-      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity Match"] }
+      { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text [Maps 📍 + Location 📌]", color: "green", dropdownItems: ["Maps Timeline 📍", "Photo Location 📌"] },
+      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"] },
+      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"] }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
     example: 'e.g., "blue pen"',
@@ -80,9 +80,9 @@ const SCENARIO_DATA = {
     header: "Fetched 204 photos from resort offsite",
     subtitleText: "Context matched via Google Calendar ('Team Offsite' Event) and Maps Timeline (Resort Location).",
     stacks: [
-      { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match — search result which matches closely to your text [Calendar 📅 + Maps 📍]", color: "green", dropdownItems: ["Calendar Event Matched", "Maps Location Verified"] },
-      { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Calendar Event Topic Match", "Visual Context Match"] },
-      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition (Whiteboards)"] }
+      { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match — search result which matches closely to your text [Calendar 📅 + Maps 📍]", color: "green", dropdownItems: ["Google Calendar 📅", "Maps Timeline 📍"] },
+      { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Calendar Topic 📅", "Visual Context 👁️"] },
+      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition 🖼️"] }
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
     example: 'e.g., "Q3 Marketing Funnel"',
@@ -114,9 +114,9 @@ const SCENARIO_DATA = {
     header: "Fetched 90 photos from airport arrival",
     subtitleText: "Context matched via Gmail (Flight Booking) and Maps Timeline (Airport Drop-off).",
     stacks: [
-      { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Maps 📍]", color: "green", dropdownItems: ["Gmail Receipt Matched", "Maps Location Verified"] },
-      { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Flight Itinerary Match", "Visual Context Match"] },
-      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Route Timeline Match"] }
+      { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Maps 📍]", color: "green", dropdownItems: ["Gmail ✉️", "Maps Timeline 📍"] },
+      { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Flight Itinerary ✉️", "Visual Context 👁️"] },
+      { title: "In-Car Dash & Highway Transit", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"] }
     ],
     chips: ["Yellow Pillar 🟡", "Printed Parking Ticket 🎫", "Near the Elevator 🛗"],
     example: 'e.g., "level 2"',
@@ -148,9 +148,9 @@ const SCENARIO_DATA = {
     header: "Fetched 109 photos from concert exit",
     subtitleText: "Context matched via Gmail (Event Ticket) and Photo Timestamp (Post-Concert).",
     stacks: [
-      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Time 🕒]", color: "green", dropdownItems: ["Gmail Ticket Matched", "Timestamp Verified"] },
-      { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time Match", "Facial Recognition Match"] },
-      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Location Proximity Match"] }
+      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Time 🕒]", color: "green", dropdownItems: ["Gmail ✉️", "Photo Timestamp 🕒"] },
+      { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time ✉️", "Facial Recognition 👤"] },
+      { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"] }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
     example: 'e.g., "holding merch"',
