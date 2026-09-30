@@ -539,7 +539,7 @@ export default function App() {
                 </div>
                 
                 {/* Meta Labels & Badges */}
-                <div className="mt-8 flex flex-col">
+                <div className="mt-4 flex flex-col">
                   <h3 className="text-[17px] font-bold text-[#1F1F1F] leading-tight">{stack.title}</h3>
                   <div className="relative mt-2">
                     <button 
