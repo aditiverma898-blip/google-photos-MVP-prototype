@@ -508,25 +508,25 @@ export default function App() {
             {activeScenario.stacks.map((stack, idx) => (
               <div key={idx} className={`flex flex-col relative ${openDropdownId === idx ? 'z-50' : 'z-20'}`}>
                 
-                {/* PHYSICAL LAYERED PHOTO STACK */}
+                {/* 3x2 PHOTO GRID COLLAGE */}
                 <div 
-                  className="relative h-[200px] w-full cursor-pointer group"
+                  className="grid grid-cols-3 gap-1 w-full rounded-[24px] overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.12)] cursor-pointer group border border-gray-100"
                   onClick={() => { if (idx === 0) setIsModalOpen(true); }}
                 >
-                  {/* Card 3 (Bottom) */}
-                  <div className="absolute top-6 left-6 right-2 bottom-[-16px] bg-[#f8f9fa] border border-gray-200 rounded-[24px] shadow-sm transform scale-90 rotate-6 opacity-40 transition-transform duration-300 group-hover:rotate-8 group-hover:translate-x-3 group-hover:translate-y-2"></div>
-                  {/* Card 2 (Middle) */}
-                  <div className="absolute top-3 left-3 right-1 bottom-[-8px] bg-[#f8f9fa] border border-gray-200 rounded-[24px] shadow-md transform scale-95 rotate-2 opacity-70 transition-transform duration-300 group-hover:rotate-4 group-hover:translate-x-1 group-hover:translate-y-1"></div>
-                  {/* Card 1 (Top) */}
-                  <div className="absolute top-0 left-0 right-0 bottom-0 bg-[#ffffff] border border-gray-100 rounded-[24px] shadow-[0_12px_28px_rgba(0,0,0,0.08)] flex flex-col overflow-hidden transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-[0_16px_36px_rgba(0,0,0,0.12)] z-10">
-                     <div className="flex-1 bg-gray-50 flex items-center justify-center relative overflow-hidden">
-                        {idx === 0 && activeScenario.coverImage ? (
-                          <img src={activeScenario.coverImage} alt="Cover" className="w-full h-full object-cover" />
-                        ) : (
-                          <ImageIcon size={56} className="text-gray-300" />
-                        )}
-                        {idx === 0 && <div className="absolute inset-0 bg-green-500/5 mix-blend-multiply pointer-events-none"></div>}
-                     </div>
+                  {Array.from({ length: 5 }).map((_, i) => {
+                    const imgSrc = activeScenario.grid ? activeScenario.grid[(idx * 5 + i) % 12] : `https://picsum.photos/seed/${idx}${i}/200/200`;
+                    return (
+                      <div key={i} className="aspect-square bg-gray-100 overflow-hidden relative">
+                        <img src={imgSrc} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt={`grid item ${i}`} />
+                      </div>
+                    );
+                  })}
+                  {/* The blurred 6th box */}
+                  <div className="aspect-square bg-gray-200 relative overflow-hidden">
+                    <img src={activeScenario.grid ? activeScenario.grid[(idx * 5 + 5) % 12] : `https://picsum.photos/seed/blur${idx}/200/200`} className="w-full h-full object-cover" alt="more items" />
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[3px] flex items-center justify-center text-white font-bold text-[20px] transition-colors duration-300 group-hover:bg-black/50">
+                      +{idx === 0 ? 34 : idx === 1 ? 12 : 7}
+                    </div>
                   </div>
                 </div>
                 
