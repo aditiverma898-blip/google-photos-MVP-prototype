@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown } from 'lucide-react';
+import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown, Star, Archive, Trash2, Folder, Film, Layout, PlaySquare, Clapperboard } from 'lucide-react';
 import './index.css';
 
 const FEED_IMAGES = [
@@ -784,6 +784,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
