@@ -417,56 +417,37 @@ export default function App() {
           )}
 
           {activeTab === 'Create' && (
-            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-4 px-4 bg-white animate-fade-in">
-              {/* Header */}
+            <div className="absolute inset-0 z-10 flex-1 overflow-y-auto scrollbar-hide pb-28 pt-6 px-4 bg-[#F8F9FA] animate-fade-in">
               <div className="flex justify-between items-center mb-6">
-                <div className="flex items-center gap-2 bg-[#FAEDE6] px-4 py-2 rounded-full">
-                  <Cloud size={18} className="text-[#3e2723]" />
-                  <span className="text-[13px] font-semibold text-[#3e2723]">Backup complete</span>
-                </div>
-                <div className="flex gap-4 text-[#3e2723] items-center">
-                  <FolderOpen size={24} />
-                  <Plus size={24} />
-                  <Bell size={24} />
-                  <div className="w-[32px] h-[32px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-[15px]">A</div>
+                <h2 className="text-[22px] font-semibold text-[#1F1F1F]">Create</h2>
+                <div className="flex gap-4 text-[#5F6368] items-center">
+                  <div className="w-[30px] h-[30px] rounded-full bg-[#673AB7] text-white flex items-center justify-center font-semibold text-sm">A</div>
                 </div>
               </div>
 
-              {/* 4 Pills Grid */}
-              <div className="grid grid-cols-2 gap-3 mb-8">
-                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
-                  <PlaySquare size={20} className="text-[#3e2723]" />
-                  <span className="font-semibold text-[14px] text-[#3e2723]">Animation</span>
-                </div>
-                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
-                  <Layout size={20} className="text-[#3e2723]" />
-                  <span className="font-semibold text-[14px] text-[#3e2723]">Collage</span>
-                </div>
-                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
-                  <Film size={20} className="text-[#3e2723]" />
-                  <span className="font-semibold text-[14px] text-[#3e2723] truncate">Highlight video</span>
-                </div>
-                <div className="bg-[#FAEDE6] rounded-[24px] py-4 px-5 flex items-center gap-3 cursor-pointer">
-                  <Clapperboard size={20} className="text-[#3e2723]" />
-                  <span className="font-semibold text-[14px] text-[#3e2723] truncate">Cinematic photo</span>
+              <div className="bg-white rounded-3xl p-5 mb-6 shadow-sm border border-gray-100">
+                <h3 className="text-[17px] font-semibold text-[#1F1F1F] mb-1">Make a new creation</h3>
+                <p className="text-[13px] text-gray-500 mb-6">Create a movie, collage, or animation from your photos.</p>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Film size={26} className="text-[#1A73E8]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Highlight video</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Layout size={26} className="text-[#137333]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Collage</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <PlaySquare size={26} className="text-[#E37400]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Animation</span>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-2 p-5 rounded-2xl bg-[#F8F9FA] cursor-pointer hover:bg-gray-100 transition-colors border border-transparent hover:border-gray-200">
+                    <Clapperboard size={26} className="text-[#C5221F]" />
+                    <span className="font-semibold text-[13px] text-[#3c4043]">Cinematic photo</span>
+                  </div>
                 </div>
               </div>
-
-              {/* Get more out of your photos section */}
-              <h3 className="text-[16px] font-semibold text-[#1F1F1F] mb-4">Get more out of your photos</h3>
-              
-              <div className="bg-[#FAEDE6] rounded-[28px] p-4 flex flex-col items-center text-center">
-                <div className="w-full h-[180px] rounded-[20px] overflow-hidden mb-4 grid grid-cols-2 gap-1.5">
-                  <div className="rounded-[12px] overflow-hidden w-full h-full"><img src="/images/stage1.png" className="w-full h-full object-cover" alt="Creation 1" /></div>
-                  <div className="rounded-[12px] overflow-hidden w-full h-full"><img src="/images/stage2.png" className="w-full h-full object-cover" alt="Creation 2" /></div>
-                  <div className="rounded-[12px] overflow-hidden w-full h-full"><img src="/images/stage3.png" className="w-full h-full object-cover" alt="Creation 3" /></div>
-                  <div className="rounded-[12px] overflow-hidden w-full h-full"><img src="/images/stage4.png" className="w-full h-full object-cover" alt="Creation 4" /></div>
-                </div>
-                <h4 className="text-[18px] font-semibold text-[#3e2723] mb-2">Make a new creation</h4>
-                <p className="text-[14px] text-[#3e2723]/80 mb-6 px-4">Create a movie, collage, or animation from your photos.</p>
-                <button className="bg-[#3e2723] text-white rounded-full py-3 px-8 font-semibold text-[15px] mb-2 shadow-md">Create new</button>
-              </div>
-
             </div>
           )}
           
