@@ -11,7 +11,8 @@ const FEED_GROUPED = [
       '/images/new_s4_hand_1.jpg', '/images/new_s4_hand_2.jpg',
       '/images/new_s4_noise_1.jpg', '/images/new_s4_noise_2.jpg', '/images/new_s4_noise_3.jpg', '/images/new_s4_noise_4.jpg',
       '/images/s4_cover.jpg',
-      '/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'
+      '/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png',
+      '/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png'
     ]
   },
   {
@@ -22,8 +23,8 @@ const FEED_GROUPED = [
       '/images/new_s3_projector_1.jpg', '/images/new_s3_projector_2.jpg', '/images/new_s3_projector_3.jpg',
       '/images/new_s3_noise_1.jpg', '/images/new_s3_noise_2.jpg', '/images/new_s3_noise_3.jpg', '/images/new_s3_noise_4.jpg',
       '/images/s3_cover.jpg',
-      '/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png',
-      '/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'
+      '/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png',
+      '/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'
     ]
   },
   {
@@ -35,8 +36,8 @@ const FEED_GROUPED = [
       '/images/new_s2_level2_1.jpg',
       '/images/new_s2_noise_1.jpg', '/images/new_s2_noise_2.jpg', '/images/new_s2_noise_3.jpg', '/images/new_s2_noise_4.jpg', '/images/new_s2_noise_5.jpg',
       '/images/s2_cover.jpg',
-      '/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png',
-      '/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'
+      '/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png',
+      '/images/dash1.png', '/images/dash2.png', '/images/dash3.png', '/images/dash4.png', '/images/dash5.png'
     ]
   },
   {
@@ -49,8 +50,7 @@ const FEED_GROUPED = [
       '/images/new_s1_noise_1.jpg', '/images/new_s1_noise_2.jpg', '/images/new_s1_noise_3.jpg', '/images/new_s1_noise_4.jpg',
       '/images/s1_cover.jpg', '/images/concert_cover.jpg',
       '/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png',
-      '/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png',
-      '/images/term1.png', '/images/term2.png', '/images/term3.png', '/images/term4.png', '/images/term5.png'
+      '/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png'
     ]
   }
 ];
