@@ -48,7 +48,7 @@ const SCENARIO_DATA = {
     stacks: [
       { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Maps Timeline 📍", "Photo Location 📌"], gridImages: ['/images/new_s4_checklist_1.jpg', '/images/new_s4_checklist_2.jpg', '/images/new_s4_blueink_1.jpg', '/images/new_s4_hand_1.jpg', '/images/new_s4_checklist_3.jpg', '/images/new_s4_noise_1.jpg'] },
       { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"], gridImages: ['/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'] },
-      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"] }
+      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png'] }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
     example: 'e.g., "blue pen"',
