@@ -46,7 +46,7 @@ const SCENARIO_DATA = {
     header: "Fetched 312 photos from flat move-in",
     subtitleText: "Context matched via Maps Timeline ('Home' Address Change) and Photo Location (New Flat).",
     stacks: [
-      { title: "Lease Documents (Move-In Window)", badge: "100% search result which matches closely to your text [Maps 📍 + Location 📌]", color: "green", dropdownItems: ["Maps Timeline Matched", "Photo Location Verified"] },
+      { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text [Maps 📍 + Location 📌]", color: "green", dropdownItems: ["Maps Timeline Matched", "Photo Location Verified"] },
       { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Visual Context Matched"] },
       { title: "Moving Truck & Unpacking", badge: "Temporal Anchor", color: "blue", dropdownItems: ["Timestamp Proximity Match"] },
       { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Broad Semantic Match"] }
@@ -81,7 +81,7 @@ const SCENARIO_DATA = {
     header: "Fetched 204 photos from resort offsite",
     subtitleText: "Context matched via Google Calendar ('Team Offsite' Event) and Maps Timeline (Resort Location).",
     stacks: [
-      { title: "Whiteboards & Screens (Offsite Window)", badge: "100% search result which matches closely to your text [Calendar 📅 + Maps 📍]", color: "green", dropdownItems: ["Calendar Event Matched", "Maps Location Verified"] },
+      { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match — search result which matches closely to your text [Calendar 📅 + Maps 📍]", color: "green", dropdownItems: ["Calendar Event Matched", "Maps Location Verified"] },
       { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Visual Context Matched"] },
       { title: "Team Lunch & Group Activities", badge: "Temporal Anchor", color: "blue", dropdownItems: ["Timestamp Proximity Match"] },
       { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Broad Semantic Match"] }
@@ -116,7 +116,7 @@ const SCENARIO_DATA = {
     header: "Fetched 90 photos from airport arrival",
     subtitleText: "Context matched via Gmail (Flight Booking) and Maps Timeline (Airport Drop-off).",
     stacks: [
-      { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% search result which matches closely to your text [Gmail ✉️ + Maps 📍]", color: "green", dropdownItems: ["Gmail Receipt Matched", "Maps Location Verified"] },
+      { title: "Basement Parking & Pillars (Arrival Window)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Maps 📍]", color: "green", dropdownItems: ["Gmail Receipt Matched", "Maps Location Verified"] },
       { title: "Terminal Curbside & Drop-off", badge: "75% Match", color: "amber", dropdownItems: ["Visual Context Matched"] },
       { title: "Inside Terminal & Check-in Gates", badge: "Post-Event", color: "blue", dropdownItems: ["Timestamp Proximity Match"] },
       { title: "In-Car Dash & Highway Transit", badge: "Pre-Event", color: "gray", dropdownItems: ["Broad Semantic Match"] }
@@ -151,7 +151,7 @@ const SCENARIO_DATA = {
     header: "Fetched 109 photos from concert exit",
     subtitleText: "Context matched via Gmail (Event Ticket) and Photo Timestamp (Post-Concert).",
     stacks: [
-      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% search result which matches closely to your text [Gmail ✉️ + Time 🕒]", color: "green", dropdownItems: ["Gmail Ticket Matched", "Timestamp Verified"] },
+      { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text [Gmail ✉️ + Time 🕒]", color: "green", dropdownItems: ["Gmail Ticket Matched", "Timestamp Verified"] },
       { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Visual Context Matched"] },
       { title: "Entry Gates & Queues (Pre-Show)", badge: "Pre-Event", color: "blue", dropdownItems: ["Timestamp Proximity Match"] },
       { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Broad Semantic Match"] }
@@ -524,10 +524,10 @@ export default function App() {
                   <div className="relative mt-2">
                     <button 
                       onClick={(e) => toggleDropdown(idx, e)}
-                      className={`flex items-center gap-2 px-3 py-1.5 rounded-[12px] text-[12px] font-bold w-fit transition-colors ${getBadgeColors(stack.color)}`}
+                      className={`flex items-start gap-2 px-3 py-2 rounded-[12px] text-[12px] font-bold w-fit max-w-full transition-colors text-left ${getBadgeColors(stack.color)}`}
                     >
-                      <span className="truncate">{stack.badge}</span>
-                      <ChevronDown size={14} className={`flex-shrink-0 transition-transform duration-300 ${openDropdownId === idx ? 'rotate-180' : ''}`} />
+                      <span className="whitespace-normal leading-snug">{stack.badge}</span>
+                      <ChevronDown size={14} className={`flex-shrink-0 mt-0.5 transition-transform duration-300 ${openDropdownId === idx ? 'rotate-180' : ''}`} />
                     </button>
                     {openDropdownId === idx && stack.dropdownItems && (
                       <div className="absolute top-[100%] left-0 mt-2 p-3 bg-white border border-gray-100 rounded-[16px] shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex flex-col gap-2 animate-slide-down min-w-[200px] w-max z-50">
