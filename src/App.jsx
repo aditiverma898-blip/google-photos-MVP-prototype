@@ -47,8 +47,8 @@ const SCENARIO_DATA = {
     subtitleText: "Context matched via Maps Timeline ('Home' Address Change) and Photo Location (New Flat).",
     stacks: [
       { title: "Lease Documents (Move-In Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Maps Timeline 📍", "Photo Location 📌"], gridImages: ['/images/new_s4_checklist_1.jpg', '/images/new_s4_checklist_2.jpg', '/images/new_s4_blueink_1.jpg', '/images/new_s4_hand_1.jpg', '/images/new_s4_checklist_3.jpg', '/images/new_s4_noise_1.jpg'] },
-      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"], gridImages: ['/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'] },
-      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png'] }
+      { title: "Empty Apartment Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Keep 📝", "Visual Text Match 👁️"], gridImages: ['/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png', '/images/int1.png', '/images/int2.png', '/images/int3.png', '/images/int4.png', '/images/int5.png'] },
+      { title: "Building Exterior & Parking", badge: "50% Broad Match", color: "gray", dropdownItems: ["Maps Timeline Proximity 📍"], gridImages: ['/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png', '/images/ext1.png', '/images/ext2.png', '/images/ext3.png', '/images/ext4.png', '/images/ext5.png'] }
     ],
     chips: ["Checklist Format 📋", "Handwritten Notes ✍️", "Held in Hand ✋"],
     example: 'e.g., "blue pen"',
@@ -81,8 +81,8 @@ const SCENARIO_DATA = {
     subtitleText: "Context matched via Google Calendar ('Team Offsite' Event) and Maps Timeline (Resort Location).",
     stacks: [
       { title: "Whiteboards & Screens (Offsite Window)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Google Calendar 📅", "Maps Timeline 📍"] },
-      { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Calendar Topic 📅", "Visual Context 👁️"], gridImages: ['/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png'] },
-      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition 🖼️"], gridImages: ['/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'] }
+      { title: "Conference Room Interiors", badge: "75% Match", color: "amber", dropdownItems: ["Google Calendar Topic 📅", "Visual Context 👁️"], gridImages: ['/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png', '/images/conf1.png', '/images/conf2.png', '/images/conf3.png', '/images/conf4.png', '/images/conf5.png'] },
+      { title: "All Whiteboards (General)", badge: "50% Broad Match", color: "gray", dropdownItems: ["Object Recognition 🖼️"], gridImages: ['/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png', '/images/white1.png', '/images/white2.png', '/images/white3.png', '/images/white4.png', '/images/white5.png'] }
     ],
     chips: ["Flowcharts 📊", "Yellow Post-its 🟨", "Projector Screens 💻"],
     example: 'e.g., "Q3 Marketing Funnel"',
@@ -149,7 +149,7 @@ const SCENARIO_DATA = {
     subtitleText: "Context matched via Gmail (Event Ticket) and Photo Timestamp (Post-Concert).",
     stacks: [
       { title: "Parking Lot Selfies (Post-Concert Exit)", badge: "100% Match — search result which matches closely to your text", color: "green", dropdownItems: ["Gmail ✉️", "Photo Timestamp 🕒"] },
-      { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time ✉️", "Facial Recognition 👤"], gridImages: ['/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png'] },
+      { title: "Live Stage & Crowd (Mid-Event)", badge: "75% Match", color: "amber", dropdownItems: ["Gmail Event Time ✉️", "Facial Recognition 👤"], gridImages: ['/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png', '/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/stage5.png'] },
       { title: "Merch Stalls & Outer Arena", badge: "50% Broad Match", color: "gray", dropdownItems: ["Photo Location Proximity 📍"], gridImages: ['/images/merch1.png', '/images/merch2.png', '/images/merch3.png', '/images/merch4.png', '/images/merch5.png', '/images/merch6.png', '/images/merch7.png', '/images/merch8.png', '/images/merch9.png', '/images/merch10.png'] }
     ],
     chips: ["Someone in a Red Jacket 🔴", "You in a Green Dress 👗", "Near the Exit Gate 🚪"],
@@ -768,3 +768,4 @@ export default function App() {
     </div>
   );
 }
+
