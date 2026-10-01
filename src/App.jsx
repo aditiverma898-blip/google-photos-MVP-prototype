@@ -133,7 +133,7 @@ const SCENARIO_DATA = {
   },
   4: {
     id: 4,
-    query: "that selfie at the concert near the merch stand",
+    query: "Concert ke baad parking lot me li gayi selfie",
     header: "Fetched 109 photos from concert exit",
     subtitleText: "Context matched via Gmail (Event Ticket) and Photo Timestamp (Post-Concert).",
     stacks: [
@@ -683,7 +683,7 @@ export default function App() {
 
             <div className="px-4 py-6 border-b border-gray-50">
               <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
-                {['/images/stage1.png', '/images/stage2.png', '/images/stage3.png', '/images/stage4.png', '/images/conf2.png'].map((src, i) => (
+                {['/images/selfie_1.jpg', '/images/selfie_2.jpg', '/images/selfie_3.jpg', '/images/selfie_4.jpg', '/images/selfie_5.jpg'].map((src, i) => (
                   <div key={i} className="flex-shrink-0 w-[56px] h-[56px] rounded-full border border-gray-200 p-0.5">
                     <div className="w-full h-full rounded-full overflow-hidden">
                       <img src={src} className="w-full h-full object-cover scale-[1.7]" alt="recent item" />
