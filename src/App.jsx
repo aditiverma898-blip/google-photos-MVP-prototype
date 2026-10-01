@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { Cloud, FolderOpen, Plus, Bell, Image as ImageIcon, Search, Sparkles, ArrowLeft, Mail, MapPin, Smartphone, ChevronDown, Check, ArrowUp, AlertCircle, X, ThumbsUp, ThumbsDown, Star, Archive, Trash2, Folder, Film, Layout, PlaySquare, Clapperboard, PlayCircle, Shirt, Video } from 'lucide-react';
 import './index.css';
 
@@ -609,7 +609,7 @@ export default function App() {
             <div className="relative pointer-events-auto">
               {showSearchTooltip && (
                 <div className="absolute bottom-[75px] right-0 bg-[#323232] text-white shadow-2xl rounded-2xl py-2.5 pl-4 pr-10 flex items-center gap-2 min-w-max border border-[#444] z-30 animate-fade-in">
-                  <span className="text-[13px] font-semibold tracking-wide">Try new ways to search ✨</span>
+                  <span className="text-[13px] font-semibold tracking-wide">Try new ways to search âœ¨</span>
                   <button 
                     onClick={(e) => { e.stopPropagation(); setShowSearchTooltip(false); }} 
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
@@ -920,10 +920,10 @@ export default function App() {
                         Got the exact photo you needed?
                       </div>
                       <div className="flex justify-center gap-4 mb-3">
-                        <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-100 text-gray-500 hover:text-green-600 transition-colors">
+                        <button onClick={() => alert("Feedback received!")} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-green-100 text-gray-500 hover:text-green-600 transition-colors">
                           <ThumbsUp size={18} />
                         </button>
-                        <button className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-100 text-gray-500 hover:text-red-600 transition-colors">
+                        <button onClick={() => alert("Feedback received!")} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-red-100 text-gray-500 hover:text-red-600 transition-colors">
                           <ThumbsDown size={18} />
                         </button>
                       </div>
@@ -1012,10 +1012,10 @@ export default function App() {
                   Got the exact photo you needed?
                 </div>
                 <div className="flex justify-center gap-4 mb-3">
-                  <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-green-500/80 text-white transition-colors">
+                  <button onClick={() => alert("Feedback received!")} className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-green-500/80 text-white transition-colors">
                     <ThumbsUp size={18} />
                   </button>
-                  <button className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-red-500/80 text-white transition-colors">
+                  <button onClick={() => alert("Feedback received!")} className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-red-500/80 text-white transition-colors">
                     <ThumbsDown size={18} />
                   </button>
                 </div>
