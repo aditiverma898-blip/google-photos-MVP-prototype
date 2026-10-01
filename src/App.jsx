@@ -564,8 +564,8 @@ export default function App() {
                 </svg>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent z-10"></div>
                 <div className="relative z-20 flex flex-col items-center pb-2">
-                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">What&apos;s on</span>
-                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">the menu?</span>
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">3 years</span>
+                  <span className="text-[15px] font-bold tracking-tight leading-snug drop-shadow-md text-center">ago</span>
                 </div>
               </div>
               <div className="flex-shrink-0 w-[140px] h-[210px] rounded-[24px] text-white p-3 flex flex-col justify-end relative overflow-hidden shadow-sm">
