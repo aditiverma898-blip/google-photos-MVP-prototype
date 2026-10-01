@@ -806,31 +806,6 @@ export default function App() {
                 {/* Meta Labels & Badges */}
                 <div className="mt-4 flex flex-col">
                   <h3 className="text-[17px] font-bold text-[#1F1F1F] leading-tight">{stack.title}</h3>
-                  <div className="relative mt-2">
-                    <button 
-                      onClick={(e) => toggleDropdown(idx, e)}
-                      className={`flex items-start gap-3 px-3 py-2 rounded-[12px] w-fit max-w-full transition-colors text-left ${getBadgeColors(stack.color)}`}
-                    >
-                      <div className="flex flex-col">
-                        <span className="text-[12px] font-bold">{stack.badge.split(' — ')[0]}</span>
-                        {stack.badge.split(' — ')[1] && (
-                          <span className="text-[10px] font-semibold leading-tight mt-0.5 opacity-85">
-                            {stack.badge.split(' — ')[1]}
-                          </span>
-                        )}
-                      </div>
-                      <ChevronDown size={14} className={`flex-shrink-0 mt-0.5 transition-transform duration-300 ${openDropdownId === idx ? 'rotate-180' : ''}`} />
-                    </button>
-                    {openDropdownId === idx && stack.dropdownItems && (
-                      <div className="absolute top-[100%] left-0 mt-2 p-3 bg-white border border-gray-100 rounded-[16px] shadow-[0_8px_24px_rgba(0,0,0,0.12)] flex flex-col gap-2 animate-slide-down min-w-[200px] w-max z-50">
-                        {stack.dropdownItems.map((item, i) => (
-                          <div key={i} className="text-[12px] font-medium text-[#0f9d58] flex items-center gap-1.5 leading-tight">
-                            <Check size={14} className="flex-shrink-0"/> {item}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
                 </div>
               </div>
             ))}
